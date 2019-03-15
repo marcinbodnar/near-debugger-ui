@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "dcded20f65f9b7d4a752",
+    "revision": "9af9bbfa2950dad7dfb3",
     "url": "./static/css/main.08988f8d.chunk.css"
   },
   {
-    "revision": "dcded20f65f9b7d4a752",
-    "url": "./static/js/main.dcded20f.chunk.js"
+    "revision": "9af9bbfa2950dad7dfb3",
+    "url": "./static/js/main.9af9bbfa.chunk.js"
   },
   {
     "revision": "d6b2a39b7404e581b95e",
@@ -20,12 +20,12 @@ self.__precacheManifest = [
     "url": "./static/media/icon-search.0e5b384b.svg"
   },
   {
-    "revision": "971c1fec19ca99196578f34e66d5f0e9",
-    "url": "./static/media/Branding with Type - Bw Seido Round Medium.971c1fec.otf"
-  },
-  {
     "revision": "dde73b38b35929e873bb5c9955f5c863",
     "url": "./static/media/Branding with Type - Bw Seido Round Light.dde73b38.otf"
+  },
+  {
+    "revision": "971c1fec19ca99196578f34e66d5f0e9",
+    "url": "./static/media/Branding with Type - Bw Seido Round Medium.971c1fec.otf"
   },
   {
     "revision": "6de0530b5b9708aa0ee264851a0cf1a2",
@@ -84,7 +84,7 @@ self.__precacheManifest = [
     "url": "./static/media/need-help-footer.3f2f5a0c.png"
   },
   {
-    "revision": "3cc38d9c60af8346e9f25a5b006b45c5",
+    "revision": "31c92685f57003d8f2dd291182c88d11",
     "url": "./index.html"
   }
 ];
