@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "902b5b97d888a3db1125",
+    "revision": "9c65b5dda8b54e851e12",
     "url": "/near-debugger-ui/static/css/main.a8e1208a.chunk.css"
   },
   {
-    "revision": "902b5b97d888a3db1125",
-    "url": "/near-debugger-ui/static/js/main.902b5b97.chunk.js"
+    "revision": "9c65b5dda8b54e851e12",
+    "url": "/near-debugger-ui/static/js/main.9c65b5dd.chunk.js"
   },
   {
     "revision": "d6b2a39b7404e581b95e",
@@ -84,7 +84,7 @@ self.__precacheManifest = [
     "url": "/near-debugger-ui/static/media/need-help-footer.3f2f5a0c.png"
   },
   {
-    "revision": "82e2e2e7a375e3820ce430cea623409f",
+    "revision": "e9865400e7302cd88a4bf442ec769626",
     "url": "/near-debugger-ui/index.html"
   }
 ];
