@@ -1,12 +1,12 @@
 {
   "main.css": "./static/css/main.08988f8d.chunk.css",
-  "main.js": "./static/js/main.97e0abca.chunk.js",
-  "main.js.map": "./static/js/main.97e0abca.chunk.js.map",
+  "main.js": "./static/js/main.30f57504.chunk.js",
+  "main.js.map": "./static/js/main.30f57504.chunk.js.map",
   "static/js/1.d6b2a39b.chunk.js": "./static/js/1.d6b2a39b.chunk.js",
   "static/js/1.d6b2a39b.chunk.js.map": "./static/js/1.d6b2a39b.chunk.js.map",
   "runtime~main.js": "./static/js/runtime~main.4a686d48.js",
   "runtime~main.js.map": "./static/js/runtime~main.4a686d48.js.map",
-  "static/media/index.css": "./static/media/Branding with Type - Bw Seido Round Light.dde73b38.otf",
+  "static/media/index.css": "./static/media/Branding with Type - Bw Seido Round Regular.6de0530b.otf",
   "static/media/icon-transactions.svg": "./static/media/icon-transactions.b48f419e.svg",
   "static/media/icon-blocks.svg": "./static/media/icon-blocks.81b24679.svg",
   "static/media/explorer-logo.svg": "./static/media/explorer-logo.52ab55a9.svg",
@@ -22,6 +22,6 @@
   "static/media/need-help-footer.png": "./static/media/need-help-footer.3f2f5a0c.png",
   "static/css/main.08988f8d.chunk.css.map": "./static/css/main.08988f8d.chunk.css.map",
   "index.html": "./index.html",
-  "precache-manifest.d75be70929f348d21d809ccc4ea035ea.js": "./precache-manifest.d75be70929f348d21d809ccc4ea035ea.js",
+  "precache-manifest.791fb8b2a97aaebbb40303050ac5b1f0.js": "./precache-manifest.791fb8b2a97aaebbb40303050ac5b1f0.js",
   "service-worker.js": "./service-worker.js"
 }
