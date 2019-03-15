@@ -1,7 +1,7 @@
 {
   "main.css": "/near-debugger-ui/static/css/main.a8e1208a.chunk.css",
-  "main.js": "/near-debugger-ui/static/js/main.9c65b5dd.chunk.js",
-  "main.js.map": "/near-debugger-ui/static/js/main.9c65b5dd.chunk.js.map",
+  "main.js": "/near-debugger-ui/static/js/main.d36a1186.chunk.js",
+  "main.js.map": "/near-debugger-ui/static/js/main.d36a1186.chunk.js.map",
   "static/js/1.d6b2a39b.chunk.js": "/near-debugger-ui/static/js/1.d6b2a39b.chunk.js",
   "static/js/1.d6b2a39b.chunk.js.map": "/near-debugger-ui/static/js/1.d6b2a39b.chunk.js.map",
   "runtime~main.js": "/near-debugger-ui/static/js/runtime~main.c33aa8ac.js",
@@ -22,6 +22,6 @@
   "static/media/need-help-footer.png": "/near-debugger-ui/static/media/need-help-footer.3f2f5a0c.png",
   "static/css/main.a8e1208a.chunk.css.map": "/near-debugger-ui/static/css/main.a8e1208a.chunk.css.map",
   "index.html": "/near-debugger-ui/index.html",
-  "precache-manifest.8c865a73c7648c691b1d5cb74c793a40.js": "/near-debugger-ui/precache-manifest.8c865a73c7648c691b1d5cb74c793a40.js",
+  "precache-manifest.e304788760d75566c5c7eefc67cd4987.js": "/near-debugger-ui/precache-manifest.e304788760d75566c5c7eefc67cd4987.js",
   "service-worker.js": "/near-debugger-ui/service-worker.js"
 }
