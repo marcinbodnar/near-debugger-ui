@@ -63,7 +63,7 @@ class TransactionsList extends Component {
                         <span style={{ fontWeight: '700' }}>{transaction.type} </span>
                         <span className="color-brown-grey">by {transaction.body.originator}</span>
                      </Grid.Column>
-                     <Grid.Column textAlign='right' floated='right' width={6} style={{ color: '#999' }}>
+                     <Grid.Column textAlign='right' floated='right' width={6} style={{ color: '#999', wordWrap: 'break-word' }}>
                         <Link
                            to={`/contract/${transaction.body.contract_id}`}
                         >

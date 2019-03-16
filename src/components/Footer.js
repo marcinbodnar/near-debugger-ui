@@ -18,7 +18,7 @@ const ResponsiveContainer = ({ children }) => (
          © 2019 NEAR Inc. All Rights Reserved.
                         </Grid.Column>
       <Grid.Column only='tablet computer' computer={6} tablet={6} textAlign='right' style={{ padding: '0px' }}>
-         <Image className="" src={HelpFooterImage} align='right' style={{ marginTop: '-18px' }} />
+         <Image className="" src={HelpFooterImage} align='right' style={{ marginTop: '-24px' }} />
       </Grid.Column>
    </Grid>
 )

@@ -23,16 +23,20 @@ import ResponsiveContainer from './components/ResponsiveContainer'
 import Footer from './components/Footer'
 import DashboardDetailWithRouter from './components/DashboardDetail'
 
-const PATH_PREFIX = process.env.REACT_APP_PATH_PREFIX
+// const PATH_PREFIX = process.env.REACT_APP_PATH_PREFIX
+const PATH_PREFIX = process.env.PUBLIC_URL
+
 
 class Routing extends Component {
    render() {
       return (
          <div className="App">
+            
             <Router basename={PATH_PREFIX}>
+            
                <ResponsiveContainer>
                   <Switch>
-                     <Route exact path="/" component={DashboardDetailWithRouter} />
+                     <Route exact path='/' component={DashboardDetailWithRouter} />
                      <Route exact path="/beacon-chain" component={BeaconChainDetailWithRouter} />
                      <Route exact path="/beacon-block/:blockIndex" component={BeaconBlockDetailWithRouter} />
                      <Route exact path="/shard-chain" component={ShardChainDetailWithRouter} />
@@ -40,7 +44,7 @@ class Routing extends Component {
                      <Route exact path="/transaction/:hash" component={TransactionDetailWithRouter} />
                      <Route exact path="/contract/:name" component={ContractDetailWithRouter} />
                      <Route exact path="/error" component={Error} />
-                     <Route component={NotFound} />
+                     <Route component={DashboardDetailWithRouter} />
                   </Switch>
                   <Footer />
                </ResponsiveContainer>

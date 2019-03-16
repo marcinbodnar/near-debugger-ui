@@ -11,6 +11,7 @@ import {
    Grid,
    Image,
    Segment,
+   Header,
 } from 'semantic-ui-react'
 
 import TransactionsImage from '../images/icon-transactions.svg';
@@ -27,9 +28,9 @@ class DashboardDetail extends Component {
       listBeaconBlocks().then(response => {
          this.setState({ blocks: response.data })
       }).catch((error) => {
-         this.props.history.push({
-            pathname: `/error`,
-         })
+         // this.props.history.push({
+         //    pathname: `/error`,
+         // })
       })
    }
 
@@ -79,10 +80,10 @@ class DashboardDetail extends Component {
                         <Grid>
                            <Grid.Row>
                               <Grid.Column textAlign='left' width={11} style={{ padding: '0px' }}>
-                                 <h2>
+                                 <Header as='h2'>
                                     <Image className="column-icon" src={TransactionsImage} />
                                     Recent Transactions
-                                 </h2>
+                                 </Header>
                               </Grid.Column>
                               <Grid.Column textAlign='right' width={5} verticalAlign='middle'>
                                  <Button
