@@ -49,7 +49,7 @@ class MobileView extends Component {
             getWidth={getWidth}
             maxWidth={Responsive.onlyTablet.maxWidth}
          >
-            {/* <Sidebar
+            <Sidebar
                as={Menu}
                animation='push'
                onHide={this.handleSidebarHide}
@@ -113,7 +113,7 @@ class MobileView extends Component {
                      </Menu.Item>
                   </Menu.Menu>
                </Menu.Item>
-            </Sidebar> */}
+            </Sidebar>
 
             <Sidebar.Pusher dimmed={sidebarOpened}>
                <Segment

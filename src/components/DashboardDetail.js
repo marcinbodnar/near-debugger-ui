@@ -28,9 +28,9 @@ class DashboardDetail extends Component {
       listBeaconBlocks().then(response => {
          this.setState({ blocks: response.data })
       }).catch((error) => {
-         // this.props.history.push({
-         //    pathname: `/error`,
-         // })
+         this.props.history.push({
+            pathname: `/error`,
+         })
       })
    }
 
