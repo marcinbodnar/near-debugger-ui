@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/near-debugger-ui/precache-manifest.2aa31dd8fe0f86828085a624cf8dc7e6.js"
+  "/near-debugger-ui/precache-manifest.1c0eac563a48c152075323e74fcf2411.js"
 );
 
 workbox.clientsClaim();
