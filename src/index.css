@@ -102,6 +102,9 @@ footer {
    border: 4px solid #e6e6e6;
    border-radius: 4px;
    margin-bottom: 40px !important;
+   position: relative;
+   min-height: 300px;
+   position: relative;
 }
 .box .row {
    padding: 0px !important;
@@ -140,6 +143,9 @@ footer {
 .border-bottom {
    border-bottom: 2px solid #e6e6e6 !important;
 }
+.border-top {
+   border-top: 2px solid #e6e6e6 !important;
+}
 .border-right {
    border-right: 2px solid #e6e6e6;
 }
@@ -150,7 +156,13 @@ footer {
 
 
 
-
+.sidebar.menu {
+   min-height: 100vh !important;
+}
+.pushable .pusher {
+   min-height: 100vh !important;
+   position: static;
+}
 
 
 
@@ -204,6 +216,14 @@ h3, .h3 {
    margin: 0px;
    font-family: Bw Seido Round !important;
 }
+h4, .h4 {
+   font-size: 16px;
+   font-weight: 500;
+   line-height: 1.33;
+   color: #24272a;
+   margin: 0px;
+   font-family: Bw Seido Round !important;
+}
 
 h6, .h6 {
    font-size: 12px;
@@ -235,6 +255,9 @@ h6, .h6 {
    background: #f8f8f8;
    border-radius: 5px;
 }
+.dashboard-stats .row {
+   margin: 10px 0;
+}
 .dashboard-stats .column {
    border-right: 1px solid #e6e6e6;
    margin: 0px 0;
@@ -248,7 +271,11 @@ h6, .h6 {
 
 .recentTB {
    border-top: 4px solid #f8f8f8 !important;
-   
+   margin: 40px 0 0 0 !important;
+}
+
+.recentTB > .row {
+   padding-top: 30px !important;
 }
 
 .column-icon {
@@ -269,6 +296,7 @@ link.view-all, button.view-all, a.view-all {
    border-left: 4px solid #f8f8f8 !important;
    margin-left: 4px !important;
    padding-bottom: 20px !important;
+   position: relative;
 }
 
 .recent-x .row {
@@ -340,14 +368,21 @@ a:hover {
    padding-right: 30px;
    letter-spacing: 2px;
 }
+.Navbar.menu a.item:hover {
+   color: #6ad1e3 !important;
+}
+.Navbar.menu .hover.item {
+   color: #6ad1e3 !important;
+}
+.ui.pointing.menu .active.item:after {
+   display: none;
+}
 
 .Navbar.menu .item:hover {
   color: #999999!important;
 }
 
-.Navbar.menu .active.item {
-  color: #999999;
-}
+
 
 .App-back-button {
   color: white;
@@ -415,7 +450,7 @@ a:hover {
    h1, .h1 {
       font-size: 26px !important;
       font-weight: 500;
-      line-height: 100px;
+      line-height: 50px;
    }
    h2, .h2 {
       font-size: 16px !important;

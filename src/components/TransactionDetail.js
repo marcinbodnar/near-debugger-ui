@@ -1,230 +1,288 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import React, { Component, Fragment } from 'react'
 import {
-  Link,
-  withRouter,
-} from 'react-router-dom';
-import {
-  Header,
-  Segment,
-  Table,
-} from 'semantic-ui-react';
+   withRouter,
+   Link,
+} from 'react-router-dom'
 
 import { getTransactionInfo } from '../utils/api'
 
-class Transaction extends React.Component {
-  static propTypes = {
-    status: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
-    shardBlockHash: PropTypes.string.isRequired,
-    shardBlockIndex: PropTypes.number.isRequired,
-    body: PropTypes.object.isRequired,
-  }
+import '../index.css'
 
-  getRowsForSendMoney(body) {
-    return (
-      <React.Fragment>
-        <Table.Row>
-          <Table.Cell collapsing>Receiver</Table.Cell>
-          <Table.Cell>{body.receiver}</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell collapsing>Amount</Table.Cell>
-          <Table.Cell>{body.amount}</Table.Cell>
-        </Table.Row>
-      </React.Fragment>
-    )
-  }
+import {
+   Container,
+   Grid,
+   Segment,
+   Dimmer,
+   Loader,
+} from 'semantic-ui-react'
 
-  getRowsForStake(body) {
-    return (
-      <React.Fragment>
-        <Table.Row>
-          <Table.Cell collapsing>Amount</Table.Cell>
-          <Table.Cell>{body.amount}</Table.Cell>
-        </Table.Row>
-      </React.Fragment>
-    )
-  }
 
-  getRowsForCreateAccount(body) {
-    return (
-      <React.Fragment>
-        <Table.Row>
-          <Table.Cell collapsing>Amount</Table.Cell>
-          <Table.Cell>{body.amount}</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell collapsing>New Account ID</Table.Cell>
-          <Table.Cell>{body.new_account_id}</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell collapsing>Public Key</Table.Cell>
-          <Table.Cell>{body.public_key}</Table.Cell>
-        </Table.Row>
-      </React.Fragment>
-    )
-  }
+const TransactionRowsForFunctionCall = ({ body }) => (
+   <Fragment>
+      <Grid.Row className='background-lg'>
+         <Grid.Column>
+            <Segment className='border-top' basic>
+               <h6>CONTRACT ID</h6>
+               <Link
+                  to={`/contract/${body.contract_id}`}
+                  className='h3 color-seafoam-blue'
+               >
+                  {body.contract_id}
+               </Link>
+            </Segment>
+         </Grid.Column>
+      </Grid.Row>
+      <Grid.Row className='background-lg'>
+         <Grid.Column>
+            <Segment className='border-top' basic>
+               <h6>METHOD NAME</h6>
+               <h3>{body.method_name}</h3>
+            </Segment>
+         </Grid.Column>
+      </Grid.Row>
+      <Grid.Row className='background-lg'>
+         <Grid.Column>
+            <Segment className='border-top' basic>
+               <h6>ARGS</h6>
+               <h3>{body.args}</h3>
+            </Segment>
+         </Grid.Column>
+      </Grid.Row>
+      <Grid.Row className='background-lg'>
+         <Grid.Column>
+            <Segment className='border-top' basic>
+               <h6>AMOUNT</h6>
+               <h3>{body.amount}</h3>
+            </Segment>
+         </Grid.Column>
+      </Grid.Row>
+   </Fragment>
+)
 
-  getRowsForDeployContract(body) {
-    return (
-      <React.Fragment>
-        <Table.Row>
-          <Table.Cell collapsing>Contract ID</Table.Cell>
-          <Table.Cell><Link to={`/contract/${body.contract_id}`}>{body.contract_id}</Link></Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell collapsing>Public Key</Table.Cell>
-          <Table.Cell>{body.public_key}</Table.Cell>
-        </Table.Row>
-      </React.Fragment>
-    )
-  }
+const TransactionRowsForDeployContract = ({ body }) => (
+   <Fragment>
+      <Grid.Row className='background-lg'>
+         <Grid.Column>
+            <Segment className='border-top' basic>
+               <h6>CONTRACT ID</h6>
+               <Link
+                  to={`/contract/${body.contract_id}`}
+                  className='h3 color-seafoam-blue'
+               >
+                  {body.contract_id}
+               </Link>
+            </Segment>
+         </Grid.Column>
+      </Grid.Row>
+      <Grid.Row className='background-lg'>
+         <Grid.Column>
+            <Segment className='border-top' basic>
+               <h6>PUBLIC KEY</h6>
+               <h3>{body.public_key}</h3>
+            </Segment>
+         </Grid.Column>
+      </Grid.Row>
+   </Fragment>
+)
 
-  getRowsForSwapKey(body) {
-    return (
-      <React.Fragment>
-        <Table.Row>
-          <Table.Cell collapsing>Current Key</Table.Cell>
-          <Table.Cell>{body.cur_key}</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell collapsing>New Key</Table.Cell>
-          <Table.Cell>{body.new_key}</Table.Cell>
-        </Table.Row>
-      </React.Fragment>
-    )
-  }
+const TransactionRowsForSwapKey = ({ body }) => (
+   <Fragment>
+      <Grid.Row className='background-lg'>
+         <Grid.Column>
+            <Segment className='border-top' basic>
+               <h6>CURRENT KEY</h6>
+               <h3>{body.cur_key}</h3>
+            </Segment>
+         </Grid.Column>
+      </Grid.Row>
+      <Grid.Row className='background-lg'>
+         <Grid.Column>
+            <Segment className='border-top' basic>
+               <h6>NEW KEY</h6>
+               <h3>{body.new_key}</h3>
+            </Segment>
+         </Grid.Column>
+      </Grid.Row>
+   </Fragment>
+)
 
-  getRowsForFunctionCall(body) {
-    return (
-      <React.Fragment>
-        <Table.Row>
-          <Table.Cell collapsing>Contract ID</Table.Cell>
-          <Table.Cell><Link to={`/contract/${body.contract_id}`}>{body.contract_id}</Link></Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell collapsing>Method Name</Table.Cell>
-          <Table.Cell>{body.method_name}</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell collapsing>Args</Table.Cell>
-          <Table.Cell>{body.args}</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell collapsing>Amount</Table.Cell>
-          <Table.Cell>{body.amount}</Table.Cell>
-        </Table.Row>
-      </React.Fragment>
-    )
-  }
+const TransactionRowsForCreateAccount = ({ body }) => (
+   <Fragment>
+      <Grid.Row className='background-lg'>
+         <Grid.Column>
+            <Segment className='border-top' basic>
+               <h6>AMOUNT</h6>
+               <h3>{body.amount}</h3>
+            </Segment>
+         </Grid.Column>
+      </Grid.Row>
+      <Grid.Row className='background-lg'>
+         <Grid.Column>
+            <Segment className='border-top' basic>
+               <h6>NEW ACCOUNT ID</h6>
+               <h3>{body.new_account_id}</h3>
+            </Segment>
+         </Grid.Column>
+      </Grid.Row>
+      <Grid.Row className='background-lg'>
+         <Grid.Column>
+            <Segment className='border-top' basic>
+               <h6>PUBLIC KEY</h6>
+               <h3>{body.public_key}</h3>
+            </Segment>
+         </Grid.Column>
+      </Grid.Row>
+   </Fragment>
+)
 
-  getTypeSpecificRows = (type, body) => {
-    if (type === 'send_money') {
-      return this.getRowsForSendMoney(body)
-    } else if (type === 'stake') {
-      return this.getRowsForStake(body)
-    } else if (type === 'create_account') {
-      return this.getRowsForCreateAccount(body)
-    } else if (type === 'swap_key') {
-      return this.getRowsForSwapKey(body)
-    } else if (type === 'deploy_contract') {
-      return this.getRowsForDeployContract(body)
-    } else if (type === 'function_call') {
-      return this.getRowsForFunctionCall(body)
-    } else {
-      this.props.history.push({
-        pathname: `/error`,
+const TransactionRowsForStake = ({ body }) => (
+   <Fragment>
+      <Grid.Row className='background-lg'>
+         <Grid.Column>
+            <Segment className='border-top' basic>
+               <h6>AMOUNT</h6>
+               <h3>{body.amount}</h3>
+            </Segment>
+         </Grid.Column>
+      </Grid.Row>
+   </Fragment>
+)
+
+const TransactionRowsForSendMoney = ({ body }) => (
+   <Fragment>
+      <Grid.Row className='background-lg'>
+         <Grid.Column>
+            <Segment className='border-top' basic>
+               <h6>RECEIVER</h6>
+               <h3>{body.receiver}</h3>
+            </Segment>
+         </Grid.Column>
+      </Grid.Row>
+      <Grid.Row className='background-lg'>
+         <Grid.Column>
+            <Segment className='border-top' basic>
+               <h6>AMOUNT</h6>
+               <h3>{body.amount}</h3>
+            </Segment>
+         </Grid.Column>
+      </Grid.Row>
+   </Fragment>
+)
+
+
+class TransactionDetail extends Component {
+   state = {
+      transaction: {
+         status: '',
+         type: '',
+         shardBlockHash: '',
+         shardBlockIndex: null,
+         body: {},
+      },
+      loader: true,
+   }
+
+   updateTransaction(hash) {
+      getTransactionInfo(hash).then(response => {
+         if (!['send_money', 'stake', 'create_account', 'swap_key', 'deploy_contract', 'function_call'].includes(response.transaction.type)) {
+            this.props.history.push({
+               pathname: `/error`,
+            })
+         }
+         this.setState({
+            transaction: {
+               status: response.status,
+               type: response.transaction.type,
+               shardBlockHash: response.shard_block.hash,
+               shardBlockIndex: response.shard_block.index,
+               body: response.transaction.body,
+            },
+            loader: false,
+         })
+      }).catch((error) => {
+         this.props.history.push({
+            pathname: `/error`,
+         })
       })
-    }
-  }
+   }
 
-  render() {
-    const typeSpecificRows = this.getTypeSpecificRows(
-      this.props.type,
-      this.props.body,
-    );
-
-    return (
-      <Table definition>
-        <Table.Body>
-          <Table.Row>
-            <Table.Cell collapsing>Status</Table.Cell>
-            <Table.Cell>{this.props.status}</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell collapsing>Shard Block</Table.Cell>
-            <Table.Cell>
-              <Link to={`/shard-block/${this.props.shardBlockIndex}`}>
-                {this.props.shardBlockHash}
-              </Link>
-            </Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell collapsing>Type</Table.Cell>
-            <Table.Cell>{this.props.type}</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell collapsing>Originator</Table.Cell>
-            <Table.Cell>{this.props.body.originator}</Table.Cell>
-          </Table.Row>
-          {typeSpecificRows}
-        </Table.Body>
-      </Table>
-    )
-  }
-}
-
-const TransactionWithRouter = withRouter(Transaction);
-
-class TransactionDetail extends React.Component {
-  state = {
-    transaction: null,
-  }
-
-  updateTransaction(hash) {
-    getTransactionInfo(hash).then(response => {
-      this.setState({ transaction: response })
-    }).catch((error) => {
-      this.props.history.push({
-        pathname: `/error`,
-      })
-    })
-  }
-
-  componentDidMount() {
-    this.updateTransaction(this.props.match.params.hash)
-  }
-
-  componentDidUpdate(prevProps) {
-    if (prevProps.match.params.hash !== this.props.match.params.hash) {
+   componentDidMount() {
       this.updateTransaction(this.props.match.params.hash)
-    }
-  }
+   }
 
-  render() {
-    const transaction = this.state.transaction;
-    var transactionBody = null;
-    if (transaction) {
-      transactionBody = (
-        <TransactionWithRouter
-          status={transaction.status}
-          type={transaction.transaction.type}
-          shardBlockHash={transaction.shard_block.hash}
-          shardBlockIndex={transaction.shard_block.index}
-          body={transaction.transaction.body}
-        />
+   componentDidUpdate(prevProps) {
+      if (prevProps.match.params.hash !== this.props.match.params.hash) {
+         this.updateTransaction(this.props.match.params.hash)
+      }
+   }
+
+   render() {
+      const { hash } = this.props.match.params
+      const hashShort = hash.substring(0, 8).concat('...')
+      const { transaction, loader } = this.state
+
+      return (
+         <Container>
+            <h1><span className="color-charcoal-grey">Transaction</span> {hashShort}</h1>
+            <Grid className='box block'>
+               <Dimmer inverted active={loader}>
+                  <Loader />
+               </Dimmer>
+               
+               <Grid.Row>
+                  <Grid.Column>
+                     <Segment className='border-bottom' basic>
+                        <h6>TRANSACTION</h6>
+                        <h2>{hash}</h2>
+                     </Segment>
+                  </Grid.Column>
+               </Grid.Row>
+               <Grid.Row width={2} >
+                  <Grid.Column computer={4} tablet={6} mobile={8} className='border-right'>
+                     <Segment className='' basic>
+                        <h6>STATUS</h6>
+                        <h2>{transaction.status}</h2>
+                     </Segment>
+                  </Grid.Column>
+                  <Grid.Column computer={12} tablet={10} mobile={8}>
+                     <Segment className='' basic>
+                        <h6>TYPE</h6>
+                        <h2>{transaction.type}</h2>
+                     </Segment>
+                  </Grid.Column>
+               </Grid.Row>
+               <Grid.Row>
+                  <Grid.Column>
+                     <Segment className='border-bottom border-top' basic>
+                        <h6>SHARD BLOCK</h6>
+                        <Link
+                           to={`/shard-block/${transaction.shardBlockIndex}`}
+                           className='h2 color-seafoam-blue'
+                        >
+                           {transaction.shardBlockHash}
+                        </Link>
+                     </Segment>
+                  </Grid.Column>
+               </Grid.Row>
+               <Grid.Row>
+                  <Grid.Column>
+                     <Segment className='' basic>
+                        <h6>ORIGINATOR</h6>
+                        <h2>{transaction.body.originator}</h2>
+                     </Segment>
+                  </Grid.Column>
+               </Grid.Row>
+
+               {transaction.type === 'send_money' && <TransactionRowsForSendMoney body={transaction.body}  />}
+               {transaction.type === 'stake' && <TransactionRowsForStake body={transaction.body}  />}
+               {transaction.type === 'create_account' && <TransactionRowsForCreateAccount body={transaction.body}  />}
+               {transaction.type === 'swap_key' && <TransactionRowsForSwapKey body={transaction.body}  />}
+               {transaction.type === 'deploy_contract' && <TransactionRowsForDeployContract body={transaction.body} />}
+               {transaction.type === 'function_call' && <TransactionRowsForFunctionCall body={transaction.body} />}
+            </Grid>
+         </Container>
       )
-    }
-    return (
-      <React.Fragment>
-        <Segment>
-          <Header>Transaction: {this.props.match.params.hash}</Header>
-          {transactionBody}
-        </Segment>
-      </React.Fragment>
-    )
-  }
+   }
 }
 
 export const TransactionDetailWithRouter = withRouter(TransactionDetail)

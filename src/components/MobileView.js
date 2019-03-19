@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import {
    Link,
 } from 'react-router-dom'
@@ -15,15 +15,15 @@ import {
    Sidebar,
 } from 'semantic-ui-react'
 
-import LogoImage from '../images/explorer-logo.svg';
-import HomeImage from '../images/icon-home.svg';
-import BlocksImage from '../images/icon-blocks.svg';
-import TransactionsImage from '../images/icon-transactions.svg';
-import HelpImage from '../images/icon-help.svg';
-import IssuesImage from '../images/icon-issues.svg';
-import AccountImage from '../images/icon-account.svg';
-import ContactsImage from '../images/icon-contacts.svg';
-import SidebarImage from '../images/sidebar.png';
+import LogoImage from '../images/explorer-logo.svg'
+import HomeImage from '../images/icon-home.svg'
+import BlocksImage from '../images/icon-blocks.svg'
+import TransactionsImage from '../images/icon-transactions.svg'
+import HelpImage from '../images/icon-help.svg'
+import IssuesImage from '../images/icon-issues.svg'
+import AccountImage from '../images/icon-account.svg'
+import ContactsImage from '../images/icon-contacts.svg'
+import SidebarImage from '../images/sidebar.png'
 
 
 const getWidth = () => {
@@ -32,6 +32,14 @@ const getWidth = () => {
 }
 
 class MobileView extends Component {
+   static propTypes = {
+      children: PropTypes.node,
+   }
+
+   static defaultProps = {
+      children: '',
+   }
+
    state = {
       sidebarOpened: false
    }
@@ -64,6 +72,7 @@ class MobileView extends Component {
                <Menu.Item
                   as={Link}
                   to='/'
+                  onClick={this.handleSidebarHide}
                >
                   <Image className="Navbar-icon" src={HomeImage} />
                   HOME
@@ -71,6 +80,7 @@ class MobileView extends Component {
                <Menu.Item
                   as={Link}
                   to='/beacon-chain'
+                  onClick={this.handleSidebarHide}
                >
                   <Image className="Navbar-icon" src={BlocksImage} />
                   BEACON CHAIN
@@ -78,6 +88,7 @@ class MobileView extends Component {
                <Menu.Item
                   as={Link}
                   to='/shard-chain'
+                  onClick={this.handleSidebarHide}
                >
                   <Image className="Navbar-icon" src={TransactionsImage} />
                   SHARD CHAIN
@@ -122,7 +133,6 @@ class MobileView extends Component {
                   style={{ minHeight: 72, padding: '1em 0em' }}
                   vertical
                >
-                  {/* <Menu inverted pointing secondary size='large'> */}
                   <Menu
                      className='Navbar'
                      // fixed={fixed ? 'top' : null}
@@ -133,7 +143,6 @@ class MobileView extends Component {
                      <Menu.Item as='a'>
                         <Image src={LogoImage} />
                      </Menu.Item>
-
                      <Menu.Menu position='right'>
                         <Menu.Item onClick={this.handleToggle} style={{ paddingRight: '0' }}>
                            <Image className="Navbar-icon" src={SidebarImage} align='right' />
@@ -141,8 +150,8 @@ class MobileView extends Component {
                      </Menu.Menu>
                   </Menu>
                </Segment>
+               {this.props.children}
             </Sidebar.Pusher>
-            {this.props.children}
          </Responsive>
       )
    }

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import {
    Link,
+   NavLink,
 } from 'react-router-dom'
 
 import '../index.css'
@@ -14,12 +15,12 @@ import {
    Visibility,
 } from 'semantic-ui-react'
 
-import LogoImage from '../images/explorer-logo.svg';
-import HomeImage from '../images/icon-home.svg';
-import BlocksImage from '../images/icon-blocks.svg';
-import TransactionsImage from '../images/icon-transactions.svg';
-import HelpImage from '../images/icon-help.svg';
-import IssuesImage from '../images/icon-issues.svg';
+import LogoImage from '../images/explorer-logo.svg'
+import HomeImage from '../images/icon-home.svg'
+import BlocksImage from '../images/icon-blocks.svg'
+import TransactionsImage from '../images/icon-transactions.svg'
+import HelpImage from '../images/icon-help.svg'
+import IssuesImage from '../images/icon-issues.svg'
 
 
 const getWidth = () => {
@@ -28,13 +29,24 @@ const getWidth = () => {
 }
 
 class DesktopView extends Component {
+   static propTypes = {
+      children: PropTypes.node,
+   }
+
+   static defaultProps = {
+      children: '',
+   }
+
    state = {
-      fixed: false
+      fixed: false,
+      activeItem: 'home',
    }
 
    hideFixedMenu = () => this.setState({ fixed: false })
 
    showFixedMenu = () => this.setState({ fixed: true })
+
+   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
    render() {
       const { fixed } = this.state
@@ -50,7 +62,6 @@ class DesktopView extends Component {
                onBottomPassedReverse={this.hideFixedMenu}
             >
                <Segment style={{ height: '72px' }} basic></Segment>
-
                <Menu
                   className='Navbar'
                   // fixed={fixed ? 'top' : null}
@@ -65,34 +76,32 @@ class DesktopView extends Component {
                      >
                      <Image src={LogoImage} />
                   </Menu.Item>
-
                   <Menu.Item
                      name='home'
-                     active={this.state.activeItem === 'home'}
+                     activeClassName='hover'
                      onClick={this.handleItemClick}
-                     as={Link}
+                     as={NavLink}
                      to='/'
+                     exact
                   >
                      <Image className="Navbar-icon" src={HomeImage} />
                      HOME
                   </Menu.Item>
-
                   <Menu.Item
                      name='beaconChain'
-                     active={this.state.activeItem === 'beaconChain'}
+                     activeClassName='hover'
                      onClick={this.handleItemClick}
-                     as={Link}
+                     as={NavLink}
                      to='/beacon-chain'
                   >
                      <Image className="Navbar-icon" src={BlocksImage} />
                      BEACON CHAIN
                   </Menu.Item>
-
                   <Menu.Item
                      name='beaconChain'
-                     active={this.state.activeItem === 'beaconChain'}
+                     activeClassName='hover'
                      onClick={this.handleItemClick}
-                     as={Link}
+                     as={NavLink}
                      to='/shard-chain'
                   >
                      <Image className="Navbar-icon" src={TransactionsImage} />
@@ -125,10 +134,6 @@ class DesktopView extends Component {
          </Responsive>
       )
    }
-}
-
-DesktopView.propTypes = {
-   children: PropTypes.node,
 }
 
 export default DesktopView

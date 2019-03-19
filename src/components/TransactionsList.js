@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import {
    Link,
 } from 'react-router-dom'
@@ -12,11 +12,15 @@ import {
    Form,
 } from 'semantic-ui-react'
 
-import TransactionsImage from '../images/icon-transactions.svg';
-import MDocImage from '../images/icon-m-doc.svg';
+import TransactionsImage from '../images/icon-transactions.svg'
+import MDocImage from '../images/icon-m-doc.svg'
 
 
 class TransactionsList extends Component {
+   static propTypes = {
+      transactions: PropTypes.object.isRequired,
+   }
+
    state = {
       search: ''
    }
@@ -26,7 +30,7 @@ class TransactionsList extends Component {
    }
 
    handleSubmit = () => {
-      console.log('not ready yet');
+      console.log('not ready yet')
    }
 
    render() {

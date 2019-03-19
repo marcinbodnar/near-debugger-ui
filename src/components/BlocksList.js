@@ -11,22 +11,24 @@ import {
    Grid,
    Header,
    Image,
+   Dimmer,
+   Loader,
 } from 'semantic-ui-react'
 
-import BlocksImage from '../images/icon-blocks.svg';
-import MTransactionsImage from '../images/icon-m-transaction.svg';
-import MReceiptsImage from '../images/icon-m-receipt.svg';
+import BlocksImage from '../images/icon-blocks.svg'
+import MTransactionsImage from '../images/icon-m-transaction.svg'
+import MReceiptsImage from '../images/icon-m-receipt.svg'
 
 
 class BlocksList extends Component {
    render() {
-      const { blocks, blockType, recent } = this.props
+      const { blocks, blockType, recent, loader } = this.props
 
       return (
          <Fragment>
             <Grid>
                <Grid.Row>
-                  <Grid.Column textAlign='left' width={recent ? 11 : 16} style={{ padding: '0px' }}>
+                  <Grid.Column textAlign='left' width={recent ? 11 : 16}>
                      <Header
                         as={recent ? 'h2' : 'h1'}
                      >
@@ -48,10 +50,14 @@ class BlocksList extends Component {
                   )}
                </Grid.Row>
             </Grid>
-            <Grid className='recent-x'>
+            <Grid className='recent-x' style={{minHeight: '500px'}}>
+               <Dimmer inverted active={loader}>
+                  <Loader  />
+               </Dimmer>
+
                {blocks.map((block, i) => (
                   <Grid.Row key={`block-${i}`} >
-                     <Grid.Column textAlign='left' floated='left' width={10} style={{ wordWrap: 'break-word', color: '#999' }}>
+                     <Grid.Column textAlign='left' className='color-brown-grey' floated='left' width={10} style={{ wordWrap: 'break-word' }}>
                         <Link to={`/${blockType}-block/${block.index}`}>
                            {block.index}
                         </Link>
@@ -68,7 +74,7 @@ class BlocksList extends Component {
                            </span>
                         )}
                      </Grid.Column>
-                     <Grid.Column textAlign='right' floated='right' width={6} style={{ color: '#999' }}>
+                     <Grid.Column textAlign='right' className='color-brown-grey' floated='right' width={6}>
                         by <a href='/'>?</a>
                         <br />
                         <span style={{ color: '#bbb', fontSize: '12px' }}>

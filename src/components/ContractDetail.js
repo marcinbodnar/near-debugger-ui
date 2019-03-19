@@ -1,85 +1,85 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import { withRouter } from 'react-router-dom';
+import React, { Component, Fragment } from 'react'
 import {
-  Header,
-  Segment,
-  Table,
-} from 'semantic-ui-react';
+   withRouter,
+} from 'react-router-dom'
 
 import { getContractInfo } from '../utils/api'
 
-class Contract extends React.Component {
-  static propTypes = {
-    values: PropTypes.object.isRequired,
-  }
+import '../index.css'
 
-  render() {
-    return (
-      <div>
-        <h2>Contract state</h2>
-        <Table definition>
-          <Table.Body>
-            {Object.keys(this.props.values).map((key) =>
-              <Table.Row key={key}>
-                <Table.Cell>{key}</Table.Cell>
-                <Table.Cell>{this.props.values[key]}</Table.Cell>
-              </Table.Row>
-            )}
-          </Table.Body>
-        </Table>
-      </div>
-    )
-  }
-}
+import {
+   Container,
+   Grid,
+   Segment,
+   Dimmer,
+   Loader,
+} from 'semantic-ui-react'
 
-const ContractWithRouter = withRouter(Contract);
 
-class ContractDetail extends React.Component {
-  state = {
-    contract: null,
-  }
+class ContractDetail extends Component {
+   state = {
+      contract: {
+         state: {
 
-  updateContract(name) {
-    getContractInfo(name).then(response => {
-      this.setState({ contract: response })
-    }).catch((error) => {
-      console.log(error)
-      // this.props.history.push({
-      //     pathname: '/error'
-      // })
-    })
-  }
+         }
+      },
+      loader: true,
+   }
 
-  componentDidMount() {
-    this.updateContract(this.props.match.params.name)
-  }
+   updateContract(name) {
+      getContractInfo(name).then(response => {
+         this.setState({ 
+            contract: response,
+            loader: false,
+         })
+      }).catch((error) => {
+         console.log(error)
+         // this.props.history.push({
+         //     pathname: '/error'
+         // })
+      })
+   }
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.match.params.name !== this.props.match.params.name) {
+   componentDidMount() {
       this.updateContract(this.props.match.params.name)
-    }
-  }
+   }
 
-  render() {
-    const contract = this.state.contract;
-    var contractBody = null;
-    if (contract) {
-      contractBody = (
-        <ContractWithRouter
-          values={contract.state}
-        />
+   componentDidUpdate(prevProps) {
+      if (prevProps.match.params.name !== this.props.match.params.name) {
+         this.updateContract(this.props.match.params.name)
+      }
+   }
+   render() {
+      const {contract, loader} = this.state
+      const { state } = contract
+
+      return (
+         <Container>
+            <h1><span className="color-charcoal-grey">Contract: </span> {this.props.match.params.name}</h1>
+            <Grid className='box block'>
+               <Dimmer inverted active={loader}>
+                  <Loader />
+               </Dimmer>
+
+               {Object.keys(state).map((key) => (
+                  <Grid.Row width={2} className='border-bottom' >
+                     <Grid.Column computer={12} tablet={10} mobile={10} className='border-right'>
+                        <Segment className='' basic>
+                           <h6>KEY</h6>
+                           <h2>{key}</h2>
+                        </Segment>
+                     </Grid.Column>
+                     <Grid.Column computer={4} tablet={6} mobile={6}>
+                        <Segment className='' basic>
+                           <h6>VALUE</h6>
+                           {state[key]}
+                        </Segment>
+                     </Grid.Column>
+                  </Grid.Row>
+               ))}
+            </Grid>
+         </Container>
       )
-    }
-    return (
-      <React.Fragment>
-        <Segment>
-          <Header>Contract: {this.props.match.params.name}</Header>
-          {contractBody}
-        </Segment>
-      </React.Fragment>
-    )
-  }
+   }
 }
-
 export const ContractDetailWithRouter = withRouter(ContractDetail)

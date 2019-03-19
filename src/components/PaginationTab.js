@@ -2,159 +2,166 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Button, Image, List } from 'semantic-ui-react';
 
-import ArrowLeftImage from './images/icon-arrow-left.svg'
-import ArrowRightImage from './images/icon-arrow-right.svg'
+import ArrowLeftImage from '../images/icon-arrow-left.svg'
+import ArrowRightImage from '../images/icon-arrow-right.svg'
 
 const LEFT_PAGE = "LEFT";
 const RIGHT_PAGE = "RIGHT";
 
 const range = (from, to, step = 1) => {
-  let i = from;
-  const range = [];
+   let i = from;
+   const range = [];
 
-  while (i <= to) {
-    range.push(i);
-    i += step;
-  }
+   while (i <= to) {
+      range.push(i);
+      i += step;
+   }
 
-  return range;
+   return range;
 };
 
 export class PaginationTab extends Component {
-  static propTypes = {
-    totalRecords: PropTypes.number.isRequired,
-    pageLimit: PropTypes.number,
-    pageNeighbors: PropTypes.number,
-    onPageChanged: PropTypes.func,
-    initialPage: PropTypes.number.isRequired,
-  }
+   static propTypes = {
+      totalRecords: PropTypes.number.isRequired,
+      pageLimit: PropTypes.number,
+      pageNeighbors: PropTypes.number,
+      onPageChanged: PropTypes.func,
+      initialPage: PropTypes.number.isRequired,
+   }
 
-  state = {
-    currentPage: null,
-  }
+   static defaultProps = {
+      pageLimit: 10,
+      pageNeighbors: 1,
+      onPageChange: () => {},
+      initialPage: 0,
+   }
 
-  getTotalPages() {
-    return Math.ceil(this.props.totalRecords / this.props.pageLimit);
-  }
+   state = {
+      currentPage: null,
+   }
 
-  componentDidMount() {
-    this.setState({ currentPage: this.props.initialPage + 1 })
-  }
+   getTotalPages() {
+      return Math.ceil(this.props.totalRecords / this.props.pageLimit);
+   }
 
-  gotoPage = (page) => {
-    const currentPage = this.props.onPageChanged(page) + 1;
-    this.setState({ currentPage });
-  };
+   componentDidMount() {
+      this.setState({ currentPage: this.props.initialPage + 1 })
+   }
 
-  handleClick = (page, evt) => {
-    evt.preventDefault();
-    this.gotoPage(page);
-    evt.target.blur();
-  };
+   gotoPage = (page) => {
+      const currentPage = this.props.onPageChanged(page) + 1;
+      this.setState({ currentPage });
+   };
 
-  handleMoveLeft = evt => {
-    evt.preventDefault();
-    this.gotoPage(this.state.currentPage - this.props.pageNeighbors * 2 - 1);
-    evt.target.blur();
-  };
+   handleClick = (page, evt) => {
+      evt.preventDefault();
+      this.gotoPage(page);
+      evt.target.blur();
+   };
 
-  handleMoveRight = evt => {
-    evt.preventDefault();
-    this.gotoPage(this.state.currentPage + this.props.pageNeighbors * 2 + 1);
-    evt.target.blur();
-  };
+   handleMoveLeft = evt => {
+      evt.preventDefault();
+      this.gotoPage(this.state.currentPage - this.props.pageNeighbors * 2 - 1);
+      evt.target.blur();
+   };
 
-  fetchPageNumbers = () => {
-    const totalPages = this.getTotalPages();
-    const currentPage = this.state.currentPage;
-    const pageNeighbors = this.props.pageNeighbors;
+   handleMoveRight = evt => {
+      evt.preventDefault();
+      this.gotoPage(this.state.currentPage + this.props.pageNeighbors * 2 + 1);
+      evt.target.blur();
+   };
 
-    const totalNumbers = pageNeighbors * 2 + 3;
-    const totalBlocks = totalNumbers + 2;
+   fetchPageNumbers = () => {
+      const totalPages = this.getTotalPages();
+      const currentPage = this.state.currentPage;
+      const pageNeighbors = this.props.pageNeighbors;
 
-    if (totalPages > totalBlocks) {
-      let pages = [];
+      const totalNumbers = pageNeighbors * 2 + 3;
+      const totalBlocks = totalNumbers + 2;
 
-      const leftBound = currentPage - pageNeighbors;
-      const rightBound = currentPage + pageNeighbors;
-      const beforeLastPage = totalPages - 1;
+      if (totalPages > totalBlocks) {
+         let pages = [];
 
-      const startPage = leftBound > 2 ? leftBound : 2;
-      const endPage = rightBound < beforeLastPage ? rightBound : beforeLastPage;
+         const leftBound = currentPage - pageNeighbors;
+         const rightBound = currentPage + pageNeighbors;
+         const beforeLastPage = totalPages - 1;
 
-      pages = range(startPage, endPage);
+         const startPage = leftBound > 2 ? leftBound : 2;
+         const endPage = rightBound < beforeLastPage ? rightBound : beforeLastPage;
 
-      const pagesCount = pages.length;
-      const singleSpillOffset = totalNumbers - pagesCount - 1;
+         pages = range(startPage, endPage);
 
-      const leftSpill = startPage > 2;
-      const rightSpill = endPage < beforeLastPage;
+         const pagesCount = pages.length;
+         const singleSpillOffset = totalNumbers - pagesCount - 1;
 
-      const leftSpillPage = LEFT_PAGE;
-      const rightSpillPage = RIGHT_PAGE;
+         const leftSpill = startPage > 2;
+         const rightSpill = endPage < beforeLastPage;
 
-      if (leftSpill && !rightSpill) {
-        const extraPages = range(startPage - singleSpillOffset, startPage - 1);
-        pages = [leftSpillPage, ...extraPages, ...pages];
-      } else if (!leftSpill && rightSpill) {
-        const extraPages = range(endPage + 1, endPage + singleSpillOffset);
-        pages = [...pages, ...extraPages, rightSpillPage];
-      } else if (leftSpill && rightSpill) {
-        pages = [leftSpillPage, ...pages, rightSpillPage];
+         const leftSpillPage = LEFT_PAGE;
+         const rightSpillPage = RIGHT_PAGE;
+
+         if (leftSpill && !rightSpill) {
+            const extraPages = range(startPage - singleSpillOffset, startPage - 1);
+            pages = [leftSpillPage, ...extraPages, ...pages];
+         } else if (!leftSpill && rightSpill) {
+            const extraPages = range(endPage + 1, endPage + singleSpillOffset);
+            pages = [...pages, ...extraPages, rightSpillPage];
+         } else if (leftSpill && rightSpill) {
+            pages = [leftSpillPage, ...pages, rightSpillPage];
+         }
+
+         return [1, ...pages, totalPages];
       }
 
-      return [1, ...pages, totalPages];
-    }
+      return range(1, totalPages);
+   };
 
-    return range(1, totalPages);
-  };
+   render() {
+      if (!this.props.totalRecords) return null;
+      if (this.totalPages === 1) return null;
 
-  render() {
-    if (!this.props.totalRecords) return null;
-    if (this.totalPages === 1) return null;
+      const pages = this.fetchPageNumbers();
+      return (
+         <List horizontal className="PaginationTab">
+            {pages.map((page, index) => {
+               if (page === LEFT_PAGE)
+                  return (
+                     <List.Item key={index}>
+                        <Button
+                           circular
+                           onClick={this.handleMoveLeft}
+                        >
+                           <Image src={ArrowLeftImage} />
+                        </Button>
+                     </List.Item>
+                  );
 
-    const pages = this.fetchPageNumbers();
-    return (
-      <List horizontal className="PaginationTab">
-        {pages.map((page, index) => {
-          if (page === LEFT_PAGE)
-            return (
-              <List.Item key={index}>
-                <Button
-                  circular
-                  onClick={this.handleMoveLeft}
-                >
-                  <Image src={ArrowLeftImage} />
-                </Button>
-              </List.Item>
-            );
+               if (page === RIGHT_PAGE)
+                  return (
+                     <List.Item key={index}>
+                        <Button
+                           circular
+                           onClick={this.handleMoveRight}
+                        >
+                           <Image src={ArrowRightImage} />
+                        </Button>
+                     </List.Item>
+                  );
 
-          if (page === RIGHT_PAGE)
-            return (
-              <List.Item key={index}>
-                <Button
-                  circular
-                  onClick={this.handleMoveRight}
-                >
-                  <Image src={ArrowRightImage} />
-                </Button>
-              </List.Item>
-            );
-
-          console.log("current page: " + this.state.currentPage + "; page: " + page)
-          return (
-            <List.Item key={index}>
-              <Button
-                circular
-                active={this.state.currentPage === page}
-                onClick={e => this.handleClick(page, e)}
-              >
-                {page}
-              </Button>
-            </List.Item>
-          );
-        })}
-      </List>
-    );
-  }
+               {/* console.log("current page: " + this.state.currentPage + "; page: " + page) */ }
+               return (
+                  <List.Item key={index}>
+                     <Button
+                        circular
+                        active={this.state.currentPage === page}
+                        onClick={e => this.handleClick(page, e)}
+                     >
+                        {page}
+                     </Button>
+                  </List.Item>
+               );
+            })}
+         </List>
+      );
+   }
 }

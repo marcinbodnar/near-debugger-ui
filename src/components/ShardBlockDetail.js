@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import PropTypes from 'prop-types'
 import {
    withRouter,
 } from 'react-router-dom'
@@ -10,6 +9,7 @@ import '../index.css'
 
 import {
    Container,
+   Loader,
 } from 'semantic-ui-react'
 
 import BlockDetail from './BlockDetail'
@@ -23,11 +23,18 @@ class ShardBlockDetail extends Component {
          hash: '',
          parentHash: '',
          transactions: [],
-         NumTransactionsIndex: null,
-      }
+         NumTransactionsIndex: 0,
+      },
+      loader: true,
    }
 
    updateBlock(blockIndex) {
+      this.setState({
+         loader: true,
+         block: {
+            NumTransactionsIndex: 0,
+         }
+      })
       getShardBlockByIndex(blockIndex).then(response => {
          this.setState(() => ({
             block: {
@@ -36,10 +43,11 @@ class ShardBlockDetail extends Component {
                parentHash: response.parent_hash,
                transactions: response.transactions,
                NumTransactionsIndex: response.transactions.length,
-            }
+            },
+            loader: false,
          }))
       }).catch((error) => {
-         console.log(error);
+         console.log(error)
          // this.props.history.push({
          //   pathname: `/error`,
          // })
@@ -58,13 +66,13 @@ class ShardBlockDetail extends Component {
    }
 
    render() {
-      const { block } = this.state
+      const { block, loader } = this.state
       const { index, transactions, NumTransactionsIndex } = block
 
       return (
          <Container>
             <h1><span className="color-charcoal-grey">Shard Block</span> #{index}</h1>
-            {block.index && <BlockDetail blockType='shard' {...block} />}
+            <BlockDetail blockType='shard' {...block} loader={loader} />
             {NumTransactionsIndex !== 0 && <TransactionsList transactions={transactions} />}
          </Container>
       )

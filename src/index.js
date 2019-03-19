@@ -31,9 +31,7 @@ class Routing extends Component {
    render() {
       return (
          <div className="App">
-            
             <Router basename={PATH_PREFIX}>
-            
                <ResponsiveContainer>
                   <Switch>
                      <Route exact path='/' component={DashboardDetailWithRouter} />

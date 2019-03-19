@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react'
-// import PropTypes from 'prop-types'
 
 import { listBeaconBlocks } from '../utils/api'
 
@@ -14,7 +13,7 @@ import {
    Header,
 } from 'semantic-ui-react'
 
-import TransactionsImage from '../images/icon-transactions.svg';
+import TransactionsImage from '../images/icon-transactions.svg'
 
 import BlocksList from './BlocksList'
 
@@ -22,11 +21,15 @@ import BlocksList from './BlocksList'
 class DashboardDetail extends Component {
    state = {
       blocks: [],
+      loader: true,
    }
 
    componentDidMount() {
       listBeaconBlocks().then(response => {
-         this.setState({ blocks: response.data })
+         this.setState({ 
+            blocks: response.data,
+            loader: false,
+         })
       }).catch((error) => {
          this.props.history.push({
             pathname: `/error`,
@@ -35,19 +38,17 @@ class DashboardDetail extends Component {
    }
 
    render() {
-      const { blocks } = this.state
+      const { blocks, loader } = this.state
 
       return (
          <Fragment>
-            <Segment style={{ padding: '0em 0 4em 0' }} vertical basic>
+            <Segment vertical basic>
                <Container>
-                  <h1>
-                     Dashboard
-                  </h1>
+                  <h1>Dashboard</h1>
                </Container>
                <Container>
                   <Grid doubling columns={5} textAlign='center' className='dashboard-stats'>
-                     <Grid.Row style={{ margin: '10px 0' }}>
+                     <Grid.Row>
                         <Grid.Column>
                            <h2>1162</h2>
                            Nodes Online
@@ -75,27 +76,28 @@ class DashboardDetail extends Component {
 
             <Container>
                <Grid columns='equal' stackable className='recentTB'>
-                  <Grid.Row textAlign='center' style={{ paddingTop: '30px' }}>
+                  <Grid.Row textAlign='center'>
                      <Grid.Column>
                         <Grid>
                            <Grid.Row>
-                              <Grid.Column textAlign='left' width={11} style={{ padding: '0px' }}>
+                              <Grid.Column textAlign='left' width={11}>
                                  <Header as='h2'>
                                     <Image className="column-icon" src={TransactionsImage} />
                                     Recent Transactions
                                  </Header>
                               </Grid.Column>
                               <Grid.Column textAlign='right' width={5} verticalAlign='middle'>
-                                 <Button
-                                    className='view-all'>
-                                    VIEW ALL
-                                    </Button>
+                                 <Button className='view-all'>VIEW ALL</Button>
                               </Grid.Column>
                            </Grid.Row>
                         </Grid>
                      </Grid.Column>
                      <Grid.Column>
-                        <BlocksList blockType='beacon' recent={true} blocks={blocks} />
+                        <BlocksList 
+                           blockType='beacon' 
+                           recent={true} 
+                           blocks={blocks} 
+                           loader={loader} />
                      </Grid.Column>
                   </Grid.Row>
                </Grid>

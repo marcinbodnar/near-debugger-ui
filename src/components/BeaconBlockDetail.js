@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import PropTypes from 'prop-types'
 import {
    withRouter,
 } from 'react-router-dom'
@@ -10,6 +9,7 @@ import '../index.css'
 
 import {
    Container,
+   Loader,
 } from 'semantic-ui-react'
 
 import BlockDetail from './BlockDetail'
@@ -17,7 +17,6 @@ import BlockDetail from './BlockDetail'
 
 class BeaconBlockDetail extends Component {
    state = {
-      blockType: 'shard',
       block: {
          index: null,
          hash: '',
@@ -27,9 +26,14 @@ class BeaconBlockDetail extends Component {
          numReceiptsIndex: null,
          NumTransactionsIndex: null,
       },
+      loader: true
    }
 
    updateBlock(blockIndex) {
+      this.setState({
+         loader: true,
+      })
+
       getBeaconBlockByIndex(blockIndex).then(response => {
          this.setState({
             block: {
@@ -40,10 +44,11 @@ class BeaconBlockDetail extends Component {
                shardBlockIndex: response.shard_block.index,
                numReceiptsIndex: response.shard_block.num_receipts,
                NumTransactionsIndex: response.shard_block.num_transactions,
-            }
+            },
+            loader: false,
          })
       }).catch((error) => {
-         console.log(error);
+         console.log(error)
       })
    }
 
@@ -60,13 +65,13 @@ class BeaconBlockDetail extends Component {
    }
 
    render() {
-      const { block } = this.state
+      const { block, loader } = this.state
       const { index } = block
 
       return (
          <Container>
             <h1><span className="color-charcoal-grey">Block</span> #{index}</h1>
-            {block.index && <BlockDetail blockType='beacon' {...block} />}
+            <BlockDetail blockType='beacon' {...block} loader={loader} />
             {/* {NumTransactionsIndex && <TransactionsList transactions={transactions} />} */}
          </Container>
       )
