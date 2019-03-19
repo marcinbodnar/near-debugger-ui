@@ -1,12 +1,12 @@
 {
-  "main.css": "/near-debugger-ui/static/css/main.8474c1a8.chunk.css",
-  "main.js": "/near-debugger-ui/static/js/main.c60728fc.chunk.js",
-  "main.js.map": "/near-debugger-ui/static/js/main.c60728fc.chunk.js.map",
+  "main.css": "/near-debugger-ui/static/css/main.a6e48635.chunk.css",
+  "main.js": "/near-debugger-ui/static/js/main.b52fc971.chunk.js",
+  "main.js.map": "/near-debugger-ui/static/js/main.b52fc971.chunk.js.map",
   "static/js/1.1cc8d584.chunk.js": "/near-debugger-ui/static/js/1.1cc8d584.chunk.js",
   "static/js/1.1cc8d584.chunk.js.map": "/near-debugger-ui/static/js/1.1cc8d584.chunk.js.map",
   "runtime~main.js": "/near-debugger-ui/static/js/runtime~main.c33aa8ac.js",
   "runtime~main.js.map": "/near-debugger-ui/static/js/runtime~main.c33aa8ac.js.map",
-  "static/media/index.css": "/near-debugger-ui/static/media/Branding with Type - Bw Seido Round Light.dde73b38.otf",
+  "static/media/index.css": "/near-debugger-ui/static/media/Branding with Type - Bw Seido Round Regular.6de0530b.otf",
   "static/media/icon-transactions.svg": "/near-debugger-ui/static/media/icon-transactions.b48f419e.svg",
   "static/media/icon-blocks.svg": "/near-debugger-ui/static/media/icon-blocks.81b24679.svg",
   "static/media/explorer-logo.svg": "/near-debugger-ui/static/media/explorer-logo.52ab55a9.svg",
@@ -22,8 +22,8 @@
   "static/media/icon-contacts.svg": "/near-debugger-ui/static/media/icon-contacts.782a78a3.svg",
   "static/media/near.svg": "/near-debugger-ui/static/media/near.584de59e.svg",
   "static/media/need-help-footer.png": "/near-debugger-ui/static/media/need-help-footer.3f2f5a0c.png",
-  "static/css/main.8474c1a8.chunk.css.map": "/near-debugger-ui/static/css/main.8474c1a8.chunk.css.map",
+  "static/css/main.a6e48635.chunk.css.map": "/near-debugger-ui/static/css/main.a6e48635.chunk.css.map",
   "index.html": "/near-debugger-ui/index.html",
-  "precache-manifest.1c0eac563a48c152075323e74fcf2411.js": "/near-debugger-ui/precache-manifest.1c0eac563a48c152075323e74fcf2411.js",
+  "precache-manifest.3af13cc86cca4934bbfa9c4dd645c03e.js": "/near-debugger-ui/precache-manifest.3af13cc86cca4934bbfa9c4dd645c03e.js",
   "service-worker.js": "/near-debugger-ui/service-worker.js"
 }

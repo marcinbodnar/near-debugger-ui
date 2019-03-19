@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "c60728fcf98f693c5ee9",
-    "url": "/near-debugger-ui/static/css/main.8474c1a8.chunk.css"
+    "revision": "b52fc971ab45211be7e2",
+    "url": "/near-debugger-ui/static/css/main.a6e48635.chunk.css"
   },
   {
-    "revision": "c60728fcf98f693c5ee9",
-    "url": "/near-debugger-ui/static/js/main.c60728fc.chunk.js"
+    "revision": "b52fc971ab45211be7e2",
+    "url": "/near-debugger-ui/static/js/main.b52fc971.chunk.js"
   },
   {
     "revision": "1cc8d5847cc04e81c2b8",
@@ -24,12 +24,12 @@ self.__precacheManifest = [
     "url": "/near-debugger-ui/static/media/Branding with Type - Bw Seido Round Medium.971c1fec.otf"
   },
   {
-    "revision": "6de0530b5b9708aa0ee264851a0cf1a2",
-    "url": "/near-debugger-ui/static/media/Branding with Type - Bw Seido Round Regular.6de0530b.otf"
-  },
-  {
     "revision": "dde73b38b35929e873bb5c9955f5c863",
     "url": "/near-debugger-ui/static/media/Branding with Type - Bw Seido Round Light.dde73b38.otf"
+  },
+  {
+    "revision": "6de0530b5b9708aa0ee264851a0cf1a2",
+    "url": "/near-debugger-ui/static/media/Branding with Type - Bw Seido Round Regular.6de0530b.otf"
   },
   {
     "revision": "b48f419e9385956be8212f284cafca0c",
@@ -92,7 +92,7 @@ self.__precacheManifest = [
     "url": "/near-debugger-ui/static/media/need-help-footer.3f2f5a0c.png"
   },
   {
-    "revision": "006309de3e21ac541e66960dbfb1fa3d",
+    "revision": "477a9c18816966e398de77d512e0d2cb",
     "url": "/near-debugger-ui/index.html"
   }
 ];
