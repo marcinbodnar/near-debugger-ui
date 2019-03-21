@@ -1,12 +1,12 @@
 {
   "main.css": "/near-debugger-ui/static/css/main.e394c312.chunk.css",
-  "main.js": "/near-debugger-ui/static/js/main.54821ab0.chunk.js",
-  "main.js.map": "/near-debugger-ui/static/js/main.54821ab0.chunk.js.map",
+  "main.js": "/near-debugger-ui/static/js/main.c0a2abc2.chunk.js",
+  "main.js.map": "/near-debugger-ui/static/js/main.c0a2abc2.chunk.js.map",
   "static/js/1.4f2a0ec6.chunk.js": "/near-debugger-ui/static/js/1.4f2a0ec6.chunk.js",
   "static/js/1.4f2a0ec6.chunk.js.map": "/near-debugger-ui/static/js/1.4f2a0ec6.chunk.js.map",
   "runtime~main.js": "/near-debugger-ui/static/js/runtime~main.c33aa8ac.js",
   "runtime~main.js.map": "/near-debugger-ui/static/js/runtime~main.c33aa8ac.js.map",
-  "static/media/index.css": "/near-debugger-ui/static/media/Branding with Type - Bw Seido Round Light.dde73b38.otf",
+  "static/media/index.css": "/near-debugger-ui/static/media/Branding with Type - Bw Seido Round Regular.6de0530b.otf",
   "static/media/icon-transactions.svg": "/near-debugger-ui/static/media/icon-transactions.faebc92a.svg",
   "static/media/icon-blocks.svg": "/near-debugger-ui/static/media/icon-blocks.2df70909.svg",
   "static/media/icon-m-transaction.svg": "/near-debugger-ui/static/media/icon-m-transaction.23b32201.svg",
@@ -34,6 +34,6 @@
   "static/media/icon-t-key-delete.svg": "/near-debugger-ui/static/media/icon-t-key-delete.ef091694.svg",
   "static/css/main.e394c312.chunk.css.map": "/near-debugger-ui/static/css/main.e394c312.chunk.css.map",
   "index.html": "/near-debugger-ui/index.html",
-  "precache-manifest.fc89050ee4438428160abd47ce31f778.js": "/near-debugger-ui/precache-manifest.fc89050ee4438428160abd47ce31f778.js",
+  "precache-manifest.4247277982e3936401ef676c99c58d6b.js": "/near-debugger-ui/precache-manifest.4247277982e3936401ef676c99c58d6b.js",
   "service-worker.js": "/near-debugger-ui/service-worker.js"
 }
