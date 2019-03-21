@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "bc3849c9e4155f785aeb",
+    "revision": "54821ab080adfcc25568",
     "url": "/near-debugger-ui/static/css/main.e394c312.chunk.css"
   },
   {
-    "revision": "bc3849c9e4155f785aeb",
-    "url": "/near-debugger-ui/static/js/main.bc3849c9.chunk.js"
+    "revision": "54821ab080adfcc25568",
+    "url": "/near-debugger-ui/static/js/main.54821ab0.chunk.js"
   },
   {
-    "revision": "0ec7ddf37ce61635d9bb",
-    "url": "/near-debugger-ui/static/js/1.0ec7ddf3.chunk.js"
+    "revision": "4f2a0ec6651e8b6716d1",
+    "url": "/near-debugger-ui/static/js/1.4f2a0ec6.chunk.js"
   },
   {
     "revision": "c33aa8accacea69a671d",
@@ -132,7 +132,7 @@ self.__precacheManifest = [
     "url": "/near-debugger-ui/static/media/icon-t-key-delete.ef091694.svg"
   },
   {
-    "revision": "15bcf2f5ae497ee9ea595d90d6c84b5e",
+    "revision": "53096b7ad3f641eacb29e351ec633ea1",
     "url": "/near-debugger-ui/index.html"
   }
 ];
