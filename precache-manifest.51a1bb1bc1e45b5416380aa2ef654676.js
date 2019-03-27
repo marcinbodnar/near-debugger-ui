@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "13995123b0b77badbb3d",
-    "url": "/near-debugger-ui/static/css/main.17441f05.chunk.css"
+    "revision": "a02a638ea7ed84472f97",
+    "url": "/near-debugger-ui/static/css/main.39c62ef4.chunk.css"
   },
   {
-    "revision": "13995123b0b77badbb3d",
-    "url": "/near-debugger-ui/static/js/main.13995123.chunk.js"
+    "revision": "a02a638ea7ed84472f97",
+    "url": "/near-debugger-ui/static/js/main.a02a638e.chunk.js"
   },
   {
-    "revision": "7ed507eeda8b2b3f9824",
-    "url": "/near-debugger-ui/static/js/1.7ed507ee.chunk.js"
+    "revision": "a69bd7f8611e4ee89106",
+    "url": "/near-debugger-ui/static/js/1.a69bd7f8.chunk.js"
   },
   {
     "revision": "c33aa8accacea69a671d",
@@ -44,12 +44,12 @@ self.__precacheManifest = [
     "url": "/near-debugger-ui/static/media/Branding with Type - Bw Seido Round Regular.6de0530b.otf"
   },
   {
-    "revision": "1f33be14ce29e918cef655d2ae99a4d8",
-    "url": "/near-debugger-ui/static/media/icon-m-filter.1f33be14.svg"
-  },
-  {
     "revision": "faebc92a5a81ac8dd1f137a5102c9c4e",
     "url": "/near-debugger-ui/static/media/icon-transactions.faebc92a.svg"
+  },
+  {
+    "revision": "1f33be14ce29e918cef655d2ae99a4d8",
+    "url": "/near-debugger-ui/static/media/icon-m-filter.1f33be14.svg"
   },
   {
     "revision": "350474420a5ffa53576a6b224f288e02",
@@ -100,12 +100,12 @@ self.__precacheManifest = [
     "url": "/near-debugger-ui/static/media/icon-blocks.2df70909.svg"
   },
   {
-    "revision": "4f7329be7413ae5490de77fcfa4322bc",
-    "url": "/near-debugger-ui/static/media/icon-account.4f7329be.svg"
-  },
-  {
     "revision": "f6fdca3960972094934c7eb09a53279a",
     "url": "/near-debugger-ui/static/media/icon-m-tps.f6fdca39.svg"
+  },
+  {
+    "revision": "4f7329be7413ae5490de77fcfa4322bc",
+    "url": "/near-debugger-ui/static/media/icon-account.4f7329be.svg"
   },
   {
     "revision": "b5be78eb0c590409487540342ddad92f",
@@ -160,7 +160,7 @@ self.__precacheManifest = [
     "url": "/near-debugger-ui/static/media/need-help-footer.3f2f5a0c.png"
   },
   {
-    "revision": "8ca6619e7ad015a59c0bd796674b5803",
+    "revision": "942726468cf53a2bbced1f01ebb86d85",
     "url": "/near-debugger-ui/index.html"
   }
 ];
