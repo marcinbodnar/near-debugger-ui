@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "82074bd34cfb2ef52179",
-    "url": "/near-debugger-ui/static/css/main.39c62ef4.chunk.css"
+    "revision": "3017745eff403d92a8e8",
+    "url": "/near-debugger-ui/static/css/main.a7d4a262.chunk.css"
   },
   {
-    "revision": "82074bd34cfb2ef52179",
-    "url": "/near-debugger-ui/static/js/main.82074bd3.chunk.js"
+    "revision": "3017745eff403d92a8e8",
+    "url": "/near-debugger-ui/static/js/main.3017745e.chunk.js"
   },
   {
     "revision": "a69bd7f8611e4ee89106",
@@ -124,8 +124,8 @@ self.__precacheManifest = [
     "url": "/near-debugger-ui/static/media/icon-m-size.1decea7d.svg"
   },
   {
-    "revision": "52ab55a96c156e7c11f6dc10a2d9b7ef",
-    "url": "/near-debugger-ui/static/media/explorer-logo.52ab55a9.svg"
+    "revision": "8b3c7aa8b73addbe358efa944e859dc6",
+    "url": "/near-debugger-ui/static/media/explorer.8b3c7aa8.png"
   },
   {
     "revision": "f6c0707a87176b3f69f25bfff085980f",
@@ -160,7 +160,7 @@ self.__precacheManifest = [
     "url": "/near-debugger-ui/static/media/need-help-footer.3f2f5a0c.png"
   },
   {
-    "revision": "f146f2e43c974b59572e587442ddb5c6",
+    "revision": "46a07c981632623e1d2933c8f338cda0",
     "url": "/near-debugger-ui/index.html"
   }
 ];

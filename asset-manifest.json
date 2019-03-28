@@ -1,7 +1,7 @@
 {
-  "main.css": "/near-debugger-ui/static/css/main.39c62ef4.chunk.css",
-  "main.js": "/near-debugger-ui/static/js/main.82074bd3.chunk.js",
-  "main.js.map": "/near-debugger-ui/static/js/main.82074bd3.chunk.js.map",
+  "main.css": "/near-debugger-ui/static/css/main.a7d4a262.chunk.css",
+  "main.js": "/near-debugger-ui/static/js/main.3017745e.chunk.js",
+  "main.js.map": "/near-debugger-ui/static/js/main.3017745e.chunk.js.map",
   "static/js/1.a69bd7f8.chunk.js": "/near-debugger-ui/static/js/1.a69bd7f8.chunk.js",
   "static/js/1.a69bd7f8.chunk.js.map": "/near-debugger-ui/static/js/1.a69bd7f8.chunk.js.map",
   "runtime~main.js": "/near-debugger-ui/static/js/runtime~main.c33aa8ac.js",
@@ -30,7 +30,7 @@
   "static/media/icon-m-held.svg": "/near-debugger-ui/static/media/icon-m-held.6d0d2ca9.svg",
   "static/media/icon-m-doc.svg": "/near-debugger-ui/static/media/icon-m-doc.6f49507e.svg",
   "static/media/icon-m-size.svg": "/near-debugger-ui/static/media/icon-m-size.1decea7d.svg",
-  "static/media/explorer-logo.svg": "/near-debugger-ui/static/media/explorer-logo.52ab55a9.svg",
+  "static/media/explorer.png": "/near-debugger-ui/static/media/explorer.8b3c7aa8.png",
   "static/media/icon-help.svg": "/near-debugger-ui/static/media/icon-help.f6c0707a.svg",
   "static/media/icon-issues.svg": "/near-debugger-ui/static/media/icon-issues.1f5b0cb9.svg",
   "static/media/icon-home.svg": "/near-debugger-ui/static/media/icon-home.f5feea3c.svg",
@@ -39,8 +39,8 @@
   "static/media/icon-contacts.svg": "/near-debugger-ui/static/media/icon-contacts.782a78a3.svg",
   "static/media/near.svg": "/near-debugger-ui/static/media/near.584de59e.svg",
   "static/media/need-help-footer.png": "/near-debugger-ui/static/media/need-help-footer.3f2f5a0c.png",
-  "static/css/main.39c62ef4.chunk.css.map": "/near-debugger-ui/static/css/main.39c62ef4.chunk.css.map",
+  "static/css/main.a7d4a262.chunk.css.map": "/near-debugger-ui/static/css/main.a7d4a262.chunk.css.map",
   "index.html": "/near-debugger-ui/index.html",
-  "precache-manifest.04ce5633b37f65eafaec3940c0ca91eb.js": "/near-debugger-ui/precache-manifest.04ce5633b37f65eafaec3940c0ca91eb.js",
+  "precache-manifest.2625ad693eb45841c70562c8a88f1333.js": "/near-debugger-ui/precache-manifest.2625ad693eb45841c70562c8a88f1333.js",
   "service-worker.js": "/near-debugger-ui/service-worker.js"
 }
