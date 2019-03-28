@@ -15,12 +15,13 @@ import {
    Visibility,
 } from 'semantic-ui-react'
 
-import LogoImage from '../images/explorer-logo.svg'
+import LogoImage from '../images/explorer.png'
 import HomeImage from '../images/icon-home.svg'
 import BlocksImage from '../images/icon-blocks.svg'
 import TransactionsImage from '../images/icon-transactions.svg'
 import HelpImage from '../images/icon-help.svg'
 import IssuesImage from '../images/icon-issues.svg'
+import AccountImage from '../images/icon-account.svg'
 
 
 const getWidth = () => {
@@ -70,13 +71,13 @@ class DesktopView extends Component {
                   borderless
                   size='large'
                >
-                  <Menu.Item 
+                  <Menu.Item
                      as={Link}
                      to='/'
-                     >
-                     <Image src={LogoImage} />
+                  >
+                     <Image className='mainlogo' src={LogoImage} />
                   </Menu.Item>
-                  <Menu.Item
+                  {/* <Menu.Item
                      name='home'
                      activeClassName='hover'
                      onClick={this.handleItemClick}
@@ -86,7 +87,7 @@ class DesktopView extends Component {
                   >
                      <Image className="Navbar-icon" src={HomeImage} />
                      HOME
-                  </Menu.Item>
+                  </Menu.Item> */}
                   <Menu.Item
                      name='beaconChain'
                      activeClassName='hover'
@@ -95,7 +96,7 @@ class DesktopView extends Component {
                      to='/beacon-chain'
                   >
                      <Image className="Navbar-icon" src={BlocksImage} />
-                     BEACON CHAIN
+                     BLOCKS
                   </Menu.Item>
                   <Menu.Item
                      name='beaconChain'
@@ -105,28 +106,65 @@ class DesktopView extends Component {
                      to='/shard-chain'
                   >
                      <Image className="Navbar-icon" src={TransactionsImage} />
-                     SHARD CHAIN
+                     SHARD
+                  </Menu.Item>
+                  <Menu.Item
+                     name='beaconChain'
+                     activeClassName='hover'
+                     onClick={this.handleItemClick}
+                     as={NavLink}
+                     to='/transactions'
+                  >
+                     <Image className="Navbar-icon" src={TransactionsImage} />
+                     TRANSACTIONS
+                  </Menu.Item>
+                  {/* <Menu.Item
+                     name='beaconChain'
+                     activeClassName='hover'
+                     onClick={this.handleItemClick}
+                     as={NavLink}
+                     to='/accounts'
+                  >
+                     <Image className="Navbar-icon" src={AccountImage} />
+                     ACCOUNTS
+                  </Menu.Item> */}
+                  <Menu.Item
+                     name='beaconChain'
+                     activeClassName='hover'
+                     onClick={this.handleItemClick}
+                     as={NavLink}
+                     to='/contracts'
+                  >
+                     <Image className="Navbar-icon" src={AccountImage} />
+                     CONTRACTS
                   </Menu.Item>
                   <Menu.Menu position='right'>
-                     <Menu.Item 
-                        as='a' 
-                        href='http://near.chat/' 
+                     <Menu.Item
+                        as='a'
+                        href='http://near.chat/'
                         target='_blank'
                      >
                         <Image className="Navbar-icon" src={HelpImage} />
-                        HELP
+                        {/* HELP */}
                      </Menu.Item>
-                     <Menu.Item 
-                        as='a' 
-                        href='https://github.com/nearprotocol/debugger/issues' 
+                     <Menu.Item
+                        as='a'
+                        href='https://github.com/nearprotocol/debugger/issues'
                         target='_blank'
                      >
                         <Image className="Navbar-icon" src={IssuesImage} />
-                        ISSUES
+                        {/* ISSUES */}
                      </Menu.Item>
-                     {/* <Menu.Item as='a'>
+                     <Menu.Item
+                        name='beaconChain'
+                        activeClassName='hover'
+                        onClick={this.handleItemClick}
+                        as={NavLink}
+                        to='/account'
+                     >
+                        <Image className="Navbar-icon" src={AccountImage} />
                         ACCOUNT
-                     </Menu.Item> */}
+                     </Menu.Item>
                   </Menu.Menu>
                </Menu>
             </Visibility>

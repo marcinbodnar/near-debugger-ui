@@ -22,6 +22,13 @@ import { TransactionDetailWithRouter } from './components/TransactionDetail';
 import ResponsiveContainer from './components/ResponsiveContainer'
 import Footer from './components/Footer'
 import DashboardDetailWithRouter from './components/DashboardDetail'
+import {TransactionsDetailWithRouter} from './components/TransactionsDetail'
+import {AccountsDetailWithRouter} from './components/AccountsDetail'
+import {AccountDetailWithRouter} from './components/AccountDetail'
+
+import {ContractsDetailWithRouter} from './components/ContractsDetail'
+
+
 
 // const PATH_PREFIX = process.env.REACT_APP_PATH_PREFIX
 const PATH_PREFIX = process.env.PUBLIC_URL
@@ -39,8 +46,12 @@ class Routing extends Component {
                      <Route exact path="/beacon-block/:blockIndex" component={BeaconBlockDetailWithRouter} />
                      <Route exact path="/shard-chain" component={ShardChainDetailWithRouter} />
                      <Route exact path="/shard-block/:blockIndex" component={ShardBlockDetailWithRouter} />
+                     <Route exact path="/transactions" component={TransactionsDetailWithRouter} />
                      <Route exact path="/transaction/:hash" component={TransactionDetailWithRouter} />
+                     <Route exact path="/contracts" component={ContractsDetailWithRouter} />
                      <Route exact path="/contract/:name" component={ContractDetailWithRouter} />
+                     <Route exact path="/accounts" component={AccountsDetailWithRouter} />
+                     <Route exact path="/account" component={AccountDetailWithRouter} />
                      <Route exact path="/error" component={Error} />
                      <Route component={DashboardDetailWithRouter} />
                   </Switch>

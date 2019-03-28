@@ -143,7 +143,7 @@ export class PaginationTab extends Component {
                            circular
                            onClick={this.handleMoveRight}
                         >
-                           <Image src={ArrowRightImage} />
+                           ...
                         </Button>
                      </List.Item>
                   );

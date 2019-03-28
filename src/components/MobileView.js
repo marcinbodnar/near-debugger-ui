@@ -15,7 +15,7 @@ import {
    Sidebar,
 } from 'semantic-ui-react'
 
-import LogoImage from '../images/explorer-logo.svg'
+import LogoImage from '../images/explorer.png'
 import HomeImage from '../images/icon-home.svg'
 import BlocksImage from '../images/icon-blocks.svg'
 import TransactionsImage from '../images/icon-transactions.svg'
@@ -83,7 +83,7 @@ class MobileView extends Component {
                   onClick={this.handleSidebarHide}
                >
                   <Image className="Navbar-icon" src={BlocksImage} />
-                  BEACON CHAIN
+                  BLOCKS
                </Menu.Item>
                <Menu.Item
                   as={Link}
@@ -91,7 +91,23 @@ class MobileView extends Component {
                   onClick={this.handleSidebarHide}
                >
                   <Image className="Navbar-icon" src={TransactionsImage} />
-                  SHARD CHAIN
+                  SHARD
+               </Menu.Item>
+               <Menu.Item
+                  as={Link}
+                  to='/transactions'
+                  onClick={this.handleSidebarHide}
+               >
+                  <Image className="Navbar-icon" src={TransactionsImage} />
+                  TRANSACTIONS
+               </Menu.Item>
+               <Menu.Item
+                  as={Link}
+                  to='/contracts'
+                  onClick={this.handleSidebarHide}
+               >
+                  <Image className="Navbar-icon" src={TransactionsImage} />
+                  CONTRACTS
                </Menu.Item>
                <Menu.Item
                   as='a'
@@ -141,7 +157,7 @@ class MobileView extends Component {
                      size='large'
                   >
                      <Menu.Item as='a'>
-                        <Image src={LogoImage} />
+                        <Image className='mainlogo' src={LogoImage} />
                      </Menu.Item>
                      <Menu.Menu position='right'>
                         <Menu.Item onClick={this.handleToggle} style={{ paddingRight: '0' }}>
