@@ -1,7 +1,7 @@
 {
   "main.css": "/near-debugger-ui/static/css/main.39c62ef4.chunk.css",
-  "main.js": "/near-debugger-ui/static/js/main.eef2abe9.chunk.js",
-  "main.js.map": "/near-debugger-ui/static/js/main.eef2abe9.chunk.js.map",
+  "main.js": "/near-debugger-ui/static/js/main.82074bd3.chunk.js",
+  "main.js.map": "/near-debugger-ui/static/js/main.82074bd3.chunk.js.map",
   "static/js/1.a69bd7f8.chunk.js": "/near-debugger-ui/static/js/1.a69bd7f8.chunk.js",
   "static/js/1.a69bd7f8.chunk.js.map": "/near-debugger-ui/static/js/1.a69bd7f8.chunk.js.map",
   "runtime~main.js": "/near-debugger-ui/static/js/runtime~main.c33aa8ac.js",
@@ -9,7 +9,7 @@
   "static/media/icon-m-transaction.svg": "/near-debugger-ui/static/media/icon-m-transaction.23b32201.svg",
   "static/media/icon-t-acct.svg": "/near-debugger-ui/static/media/icon-t-acct.62565c6c.svg",
   "static/media/icon-t-call.svg": "/near-debugger-ui/static/media/icon-t-call.da169184.svg",
-  "static/media/index.css": "/near-debugger-ui/static/media/Branding with Type - Bw Seido Round Medium.971c1fec.otf",
+  "static/media/index.css": "/near-debugger-ui/static/media/Branding with Type - Bw Seido Round Regular.6de0530b.otf",
   "static/media/icon-transactions.svg": "/near-debugger-ui/static/media/icon-transactions.faebc92a.svg",
   "static/media/icon-m-filter.svg": "/near-debugger-ui/static/media/icon-m-filter.1f33be14.svg",
   "static/media/icon-t-contract.svg": "/near-debugger-ui/static/media/icon-t-contract.35047442.svg",
@@ -41,6 +41,6 @@
   "static/media/need-help-footer.png": "/near-debugger-ui/static/media/need-help-footer.3f2f5a0c.png",
   "static/css/main.39c62ef4.chunk.css.map": "/near-debugger-ui/static/css/main.39c62ef4.chunk.css.map",
   "index.html": "/near-debugger-ui/index.html",
-  "precache-manifest.b42ad0fd577734f5cbe34cd32fb79b1b.js": "/near-debugger-ui/precache-manifest.b42ad0fd577734f5cbe34cd32fb79b1b.js",
+  "precache-manifest.04ce5633b37f65eafaec3940c0ca91eb.js": "/near-debugger-ui/precache-manifest.04ce5633b37f65eafaec3940c0ca91eb.js",
   "service-worker.js": "/near-debugger-ui/service-worker.js"
 }
