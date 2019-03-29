@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "80824168dba91a0e05d1",
+    "revision": "3b18fc2032d1c2a2c797",
     "url": "/near-debugger-ui/static/css/main.e44da041.chunk.css"
   },
   {
-    "revision": "80824168dba91a0e05d1",
-    "url": "/near-debugger-ui/static/js/main.80824168.chunk.js"
+    "revision": "3b18fc2032d1c2a2c797",
+    "url": "/near-debugger-ui/static/js/main.3b18fc20.chunk.js"
   },
   {
-    "revision": "143e8830d897a8f858bf",
-    "url": "/near-debugger-ui/static/js/1.143e8830.chunk.js"
+    "revision": "b759cb97762296749c8c",
+    "url": "/near-debugger-ui/static/js/1.b759cb97.chunk.js"
   },
   {
     "revision": "c33aa8accacea69a671d",
@@ -28,24 +28,24 @@ self.__precacheManifest = [
     "url": "/near-debugger-ui/static/media/icon-t-call.da169184.svg"
   },
   {
-    "revision": "faebc92a5a81ac8dd1f137a5102c9c4e",
-    "url": "/near-debugger-ui/static/media/icon-transactions.faebc92a.svg"
-  },
-  {
     "revision": "2cea301b51a16774fee9b6e5d78cfff0",
     "url": "/near-debugger-ui/static/media/icon-m-search.2cea301b.svg"
-  },
-  {
-    "revision": "6de0530b5b9708aa0ee264851a0cf1a2",
-    "url": "/near-debugger-ui/static/media/Branding with Type - Bw Seido Round Regular.6de0530b.otf"
   },
   {
     "revision": "971c1fec19ca99196578f34e66d5f0e9",
     "url": "/near-debugger-ui/static/media/Branding with Type - Bw Seido Round Medium.971c1fec.otf"
   },
   {
+    "revision": "6de0530b5b9708aa0ee264851a0cf1a2",
+    "url": "/near-debugger-ui/static/media/Branding with Type - Bw Seido Round Regular.6de0530b.otf"
+  },
+  {
     "revision": "dde73b38b35929e873bb5c9955f5c863",
     "url": "/near-debugger-ui/static/media/Branding with Type - Bw Seido Round Light.dde73b38.otf"
+  },
+  {
+    "revision": "faebc92a5a81ac8dd1f137a5102c9c4e",
+    "url": "/near-debugger-ui/static/media/icon-transactions.faebc92a.svg"
   },
   {
     "revision": "1f33be14ce29e918cef655d2ae99a4d8",
@@ -136,6 +136,10 @@ self.__precacheManifest = [
     "url": "/near-debugger-ui/static/media/icon-issues.1f5b0cb9.svg"
   },
   {
+    "revision": "f77e50996c81e5f988fe4c6b5a67918d",
+    "url": "/near-debugger-ui/static/media/icon-shard.f77e5099.svg"
+  },
+  {
     "revision": "f5feea3c3d44f29b89268fd22d209646",
     "url": "/near-debugger-ui/static/media/icon-home.f5feea3c.svg"
   },
@@ -160,7 +164,7 @@ self.__precacheManifest = [
     "url": "/near-debugger-ui/static/media/need-help-footer.3f2f5a0c.png"
   },
   {
-    "revision": "8af22d2cfcdb35184e279d457c0d6beb",
+    "revision": "0e1885636f9370b009257ae44d045c31",
     "url": "/near-debugger-ui/index.html"
   }
 ];
