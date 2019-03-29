@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "3b18fc2032d1c2a2c797",
-    "url": "/near-debugger-ui/static/css/main.e44da041.chunk.css"
+    "revision": "79584a54bb7bddfd7d20",
+    "url": "/near-debugger-ui/static/css/main.939866dd.chunk.css"
   },
   {
-    "revision": "3b18fc2032d1c2a2c797",
-    "url": "/near-debugger-ui/static/js/main.3b18fc20.chunk.js"
+    "revision": "79584a54bb7bddfd7d20",
+    "url": "/near-debugger-ui/static/js/main.79584a54.chunk.js"
   },
   {
-    "revision": "b759cb97762296749c8c",
-    "url": "/near-debugger-ui/static/js/1.b759cb97.chunk.js"
+    "revision": "fe18926141548e2092d9",
+    "url": "/near-debugger-ui/static/js/1.fe189261.chunk.js"
   },
   {
     "revision": "c33aa8accacea69a671d",
@@ -20,14 +20,6 @@ self.__precacheManifest = [
     "url": "/near-debugger-ui/static/media/icon-m-transaction.23b32201.svg"
   },
   {
-    "revision": "62565c6c6556e0106505bb9f79baa835",
-    "url": "/near-debugger-ui/static/media/icon-t-acct.62565c6c.svg"
-  },
-  {
-    "revision": "da1691847d01979276a79dda1fa73a6e",
-    "url": "/near-debugger-ui/static/media/icon-t-call.da169184.svg"
-  },
-  {
     "revision": "2cea301b51a16774fee9b6e5d78cfff0",
     "url": "/near-debugger-ui/static/media/icon-m-search.2cea301b.svg"
   },
@@ -36,12 +28,12 @@ self.__precacheManifest = [
     "url": "/near-debugger-ui/static/media/Branding with Type - Bw Seido Round Medium.971c1fec.otf"
   },
   {
-    "revision": "6de0530b5b9708aa0ee264851a0cf1a2",
-    "url": "/near-debugger-ui/static/media/Branding with Type - Bw Seido Round Regular.6de0530b.otf"
-  },
-  {
     "revision": "dde73b38b35929e873bb5c9955f5c863",
     "url": "/near-debugger-ui/static/media/Branding with Type - Bw Seido Round Light.dde73b38.otf"
+  },
+  {
+    "revision": "6de0530b5b9708aa0ee264851a0cf1a2",
+    "url": "/near-debugger-ui/static/media/Branding with Type - Bw Seido Round Regular.6de0530b.otf"
   },
   {
     "revision": "faebc92a5a81ac8dd1f137a5102c9c4e",
@@ -52,8 +44,16 @@ self.__precacheManifest = [
     "url": "/near-debugger-ui/static/media/icon-m-filter.1f33be14.svg"
   },
   {
+    "revision": "da1691847d01979276a79dda1fa73a6e",
+    "url": "/near-debugger-ui/static/media/icon-t-call.da169184.svg"
+  },
+  {
     "revision": "350474420a5ffa53576a6b224f288e02",
     "url": "/near-debugger-ui/static/media/icon-t-contract.35047442.svg"
+  },
+  {
+    "revision": "62565c6c6556e0106505bb9f79baa835",
+    "url": "/near-debugger-ui/static/media/icon-t-acct.62565c6c.svg"
   },
   {
     "revision": "f726da93f5904efff668ffd7bcb4f3a9",
@@ -80,36 +80,16 @@ self.__precacheManifest = [
     "url": "/near-debugger-ui/static/media/icon-arrow-down.fcefbf0b.svg"
   },
   {
-    "revision": "2c9f3083a8f3d22e981c014f117fbf1b",
-    "url": "/near-debugger-ui/static/media/icon-arrow-right.2c9f3083.svg"
-  },
-  {
     "revision": "65562a391a2667d00eacad8f3ae2c4de",
     "url": "/near-debugger-ui/static/media/icon-m-copy.65562a39.svg"
-  },
-  {
-    "revision": "d54a886a7cf844e454b193413349b146",
-    "url": "/near-debugger-ui/static/media/icon-m-user.d54a886a.svg"
-  },
-  {
-    "revision": "833c1d001ced9c52bf17ebdd571c7107",
-    "url": "/near-debugger-ui/static/media/icon-m-height.833c1d00.svg"
   },
   {
     "revision": "2df709098615b3151b542c6ed76495eb",
     "url": "/near-debugger-ui/static/media/icon-blocks.2df70909.svg"
   },
   {
-    "revision": "f6fdca3960972094934c7eb09a53279a",
-    "url": "/near-debugger-ui/static/media/icon-m-tps.f6fdca39.svg"
-  },
-  {
     "revision": "4f7329be7413ae5490de77fcfa4322bc",
     "url": "/near-debugger-ui/static/media/icon-account.4f7329be.svg"
-  },
-  {
-    "revision": "b5be78eb0c590409487540342ddad92f",
-    "url": "/near-debugger-ui/static/media/icon-arrow-up.b5be78eb.svg"
   },
   {
     "revision": "6d0d2ca9d26a65b10cd05bf145c858c9",
@@ -122,6 +102,26 @@ self.__precacheManifest = [
   {
     "revision": "1decea7d7de62524c76ee3a6a2dea254",
     "url": "/near-debugger-ui/static/media/icon-m-size.1decea7d.svg"
+  },
+  {
+    "revision": "2c9f3083a8f3d22e981c014f117fbf1b",
+    "url": "/near-debugger-ui/static/media/icon-arrow-right.2c9f3083.svg"
+  },
+  {
+    "revision": "d54a886a7cf844e454b193413349b146",
+    "url": "/near-debugger-ui/static/media/icon-m-user.d54a886a.svg"
+  },
+  {
+    "revision": "833c1d001ced9c52bf17ebdd571c7107",
+    "url": "/near-debugger-ui/static/media/icon-m-height.833c1d00.svg"
+  },
+  {
+    "revision": "f6fdca3960972094934c7eb09a53279a",
+    "url": "/near-debugger-ui/static/media/icon-m-tps.f6fdca39.svg"
+  },
+  {
+    "revision": "b5be78eb0c590409487540342ddad92f",
+    "url": "/near-debugger-ui/static/media/icon-arrow-up.b5be78eb.svg"
   },
   {
     "revision": "8b3c7aa8b73addbe358efa944e859dc6",
@@ -138,6 +138,10 @@ self.__precacheManifest = [
   {
     "revision": "f77e50996c81e5f988fe4c6b5a67918d",
     "url": "/near-debugger-ui/static/media/icon-shard.f77e5099.svg"
+  },
+  {
+    "revision": "b138ae7e22dc848297e344a269030ded",
+    "url": "/near-debugger-ui/static/media/icon-contract.b138ae7e.svg"
   },
   {
     "revision": "f5feea3c3d44f29b89268fd22d209646",
@@ -164,7 +168,23 @@ self.__precacheManifest = [
     "url": "/near-debugger-ui/static/media/need-help-footer.3f2f5a0c.png"
   },
   {
-    "revision": "0e1885636f9370b009257ae44d045c31",
+    "revision": "ea4dc1c11f380f9156217a9c49137e0a",
+    "url": "/near-debugger-ui/static/media/icon-m-node-online.ea4dc1c1.svg"
+  },
+  {
+    "revision": "c5489e89c13e6c6d9fa19806858f9c9e",
+    "url": "/near-debugger-ui/static/media/icon-m-power.c5489e89.svg"
+  },
+  {
+    "revision": "e0e72e123a76b2f94c23b4d9b0d7a179",
+    "url": "/near-debugger-ui/static/media/icon-transarrow-down.e0e72e12.svg"
+  },
+  {
+    "revision": "d6454108adf65f3c8c53413684d4b554",
+    "url": "/near-debugger-ui/static/media/icon-transarrow-up.d6454108.svg"
+  },
+  {
+    "revision": "ff89102fe6ac55ebe00b95e8f5617004",
     "url": "/near-debugger-ui/index.html"
   }
 ];
