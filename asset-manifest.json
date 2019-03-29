@@ -7,7 +7,7 @@
   "runtime~main.js": "/near-debugger-ui/static/js/runtime~main.c33aa8ac.js",
   "runtime~main.js.map": "/near-debugger-ui/static/js/runtime~main.c33aa8ac.js.map",
   "static/media/icon-m-transaction.svg": "/near-debugger-ui/static/media/icon-m-transaction.23b32201.svg",
-  "static/media/index.css": "/near-debugger-ui/static/media/Branding with Type - Bw Seido Round Regular.6de0530b.otf",
+  "static/media/index.css": "/near-debugger-ui/static/media/Branding with Type - Bw Seido Round Light.dde73b38.otf",
   "static/media/icon-transactions.svg": "/near-debugger-ui/static/media/icon-transactions.faebc92a.svg",
   "static/media/icon-m-filter.svg": "/near-debugger-ui/static/media/icon-m-filter.1f33be14.svg",
   "static/media/icon-t-call.svg": "/near-debugger-ui/static/media/icon-t-call.da169184.svg",
@@ -47,6 +47,6 @@
   "static/media/icon-transarrow-up.svg": "/near-debugger-ui/static/media/icon-transarrow-up.d6454108.svg",
   "static/css/main.939866dd.chunk.css.map": "/near-debugger-ui/static/css/main.939866dd.chunk.css.map",
   "index.html": "/near-debugger-ui/index.html",
-  "precache-manifest.2a0c706e47346b84eaeb78c5fe2bd37a.js": "/near-debugger-ui/precache-manifest.2a0c706e47346b84eaeb78c5fe2bd37a.js",
+  "precache-manifest.76794b36e9f93c7547703aad026c6618.js": "/near-debugger-ui/precache-manifest.76794b36e9f93c7547703aad026c6618.js",
   "service-worker.js": "/near-debugger-ui/service-worker.js"
 }
