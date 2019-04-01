@@ -65,7 +65,7 @@ class ContractDetail extends Component {
          { img: TransactionTypeKeySwap, name: 'SWAP KEY' },
          { img: TransactionTypeKeyNew, name: 'ADD KEY' },
          { img: TransactionTypeKeyDelete, name: 'DELETE KEY' },
-         { img: TransactionTypeAcct, name: 'ADD BLS KEY' },
+         // { img: TransactionTypeAcct, name: 'ADD BLS KEY' },
          { img: MTransactionsImage, name: 'UNKNOWN CALL' },
       ],
 
@@ -116,78 +116,57 @@ class ContractDetail extends Component {
 
       return (
          <Container>
-            <h1><span className="color-charcoal-grey">Contract: </span> @{this.props.match.params.name}</h1>
+            <Grid className='page-title'>
+               <Grid.Column as='h1'>Contract: <span className="color-black"> @{this.props.match.params.name}</span></Grid.Column>
+            </Grid>
 
             <Grid className='box block'>
                <Dimmer inverted active={loader}>
                   <Loader />
                </Dimmer>
 
-
-
                <Fragment>
                   <Grid.Row width={4} className='border-bottom'>
                      <Grid.Column computer={6} tablet={8} mobile={16} className='border-right'>
-                        <Image src={TransactionTypeCall} align='left' className='icon-tiny' />
-                        <h5>BALANCE</h5>
+                        <h5><span className='balance-image'>Ⓝ </span>BALANCE</h5>
                         <List floated='left' horizontal>
-                           <List.Item as='h2'>
-                              234,567
-                           </List.Item>
-                           <List.Item>
-                              <Image src={TransactionTypeCall} align='' style={{}} />
-                           </List.Item>
-                           <List.Item as='h5'>
-                              (2,000,000 USD)
-                           </List.Item>
+                           <List.Item as='h2'>234,567<span className='balance-image-big'> Ⓝ</span></List.Item>
+                           <List.Item as='h5'>(2,000,000 USD)</List.Item>
                         </List>
                      </Grid.Column>
                      <Grid.Column computer={4} tablet={8} mobile={16} className='border-right'>
                         <Image src={MTransactionsImage} align='left' className='icon-tiny' />
                         <h5>TRANSACTIONS</h5>
-                        <h2>
-                           1,259,856
-                        </h2>
+                        <h2>1,259,856</h2>
                      </Grid.Column>
                      <Grid.Column computer={5} tablet={8} mobile={16}>
                         <Image src={MUserImage} align='left' className='icon-tiny' />
                         <h5>CREATED BY</h5>
-                        <h3 className='color-blue'>
-                           @vlad.near
-                        </h3>
+                        <h3 className='color-blue'>@vlad.near</h3>
                      </Grid.Column>
                   </Grid.Row>
                   <Grid.Row className='background-lg'>
                      <Grid.Column computer={6} tablet={8}>
                         <h5>CREATED</h5>
-                        <h3>
-                           March 20, 2019 at 5:34:09pm
-                        </h3>
+                        <h3>March 20, 2019 at 5:34:09pm</h3>
                      </Grid.Column>
                      <Grid.Column computer={10} tablet={8}>
                         <h5>ADDRESS</h5>
-                        <div style={{ display: 'flex' }}>
-                           <div>
-                              <h3>AxwJo5FF5rY8MramAUeA6DQ5s7fDYKJkDLnFPA1CwKQa</h3>
-                           </div>
-                           <div>
-                              <Image src={MCopyImage} align='' style={{ width: '18px', margin: '2px 10px 0 10px' }} />
-                           </div>
-                        </div>
+                        <List floated='left' horizontal>
+                           <List.Item as='h3'>TMuA6YqfCeX8EhbfYEg5y7S4DqzSJireY9</List.Item>
+                           <List.Item ><Image src={MCopyImage} className='copy-image' /></List.Item>
+                        </List>
                      </Grid.Column>
                   </Grid.Row>
-                  {Object.keys(state).map((key,i) => (
+
+                  {Object.keys(state).map((key, i) => (
                      <Grid.Row key={`key-${i}`} className='background-lg border-top'>
                         <Grid.Column computer={10} tablet={10}>
                            <h6>KEY</h6>
-                           <div style={{ display: 'flex' }}>
-                              <div>
-                                 <h3>{key}</h3>
-                              </div>
-                              <div>
-                                 <Image src={MCopyImage} align='' style={{ width: '18px', margin: '2px 10px 0 10px' }} />
-                              </div>
-                           </div>
+                           <List floated='left' horizontal>
+                              <List.Item as='h3'>{key}</List.Item>
+                              <List.Item ><Image src={MCopyImage} className='copy-image' /></List.Item>
+                           </List>
                         </Grid.Column>
                         <Grid.Column computer={6} tablet={6}>
                            <h6>VALUE</h6>
@@ -197,8 +176,6 @@ class ContractDetail extends Component {
                   ))}
                </Fragment>
             </Grid>
-
-
 
             <TabBlock>
                <div label='Transactions' labelImg={TransactionsImage}>
@@ -232,7 +209,7 @@ class ContractDetail extends Component {
                            <img src={MCopyImage} />
                         </div>
                         <div className='code-item-right color-blue'>
-                           Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet 
+                           Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
                         </div>
                      </div>
                      <div className='code-item'>
@@ -248,7 +225,7 @@ class ContractDetail extends Component {
                            <img src={MCopyImage} />
                         </div>
                         <div className='code-item-right color-blue'>
-                           Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet 
+                           Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
                         </div>
                      </div>
                   </div>

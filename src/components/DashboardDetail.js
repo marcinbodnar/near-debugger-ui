@@ -65,7 +65,7 @@ class DashboardDetail extends Component {
          { img: TransactionTypeKeySwap, name: 'SWAP KEY' },
          { img: TransactionTypeKeyNew, name: 'ADD KEY' },
          { img: TransactionTypeKeyDelete, name: 'DELETE KEY' },
-         { img: TransactionTypeAcct, name: 'ADD BLS KEY' },
+         // { img: TransactionTypeAcct, name: 'ADD BLS KEY' },
          { img: MTransactionsImage, name: 'UNKNOWN CALL' },
       ],
    }
@@ -89,8 +89,13 @@ class DashboardDetail extends Component {
       return (
          <Fragment>
             <Container>
-               <h1>Dashboard</h1>
-               <DashboardTop />
+               <Grid className='page-title'>
+                  <Grid.Column as='h1'>Dashboard</Grid.Column>
+               </Grid>
+
+               <DashboardTop
+                  blockHeight={blocks.length ? blocks[0].index : '-'}
+                />
                <Grid columns={2} stackable className='recentTB'>
                   <Grid.Column computer={10}>
                      <DashboardRecentTransactions>

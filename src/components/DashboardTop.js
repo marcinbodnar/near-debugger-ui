@@ -34,23 +34,24 @@ import TransactionTypeKeySwap from '../images/icon-t-key-swap.svg'
 import TransactionTypeKeyNew from '../images/icon-t-key-new.svg'
 import TransactionTypeKeyDelete from '../images/icon-t-key-delete.svg'
 import MTransactionsImage from '../images/icon-m-transaction.svg'
+import MNodeOnlineImage from '../images/icon-m-node-online.svg'
 
 import BlocksImage from '../images/icon-blocks.svg'
 
 import BlocksList from './BlocksList'
 import TransactionRowMain from './TransactionRowMain'
 
-const DashboardTop = ({children}) => (
+const DashboardTop = ({blockHeight, children}) => (
    <Grid className='box block'>
       <Grid.Column computer={4} tablet={8} mobile={16} className='border-right'>
-         <Image src={TransactionTypeCall} className='icon-tiny' />
+         <Image src={MNodeOnlineImage} className='icon-tiny' />
          <h5>NODES ONLINE</h5>
          <h2>1162<span className='color-brown-grey'>/2356</span></h2>
       </Grid.Column>
       <Grid.Column computer={3} tablet={8} mobile={16} className='border-right'>
          <Image src={MHeightImage} className='icon-tiny' />
          <h5>BLOCK HEIGHT</h5>
-         <h2>6,083,793</h2>
+         <h2>{blockHeight.toLocaleString()}</h2>
       </Grid.Column>
       <Grid.Column computer={3} tablet={8} mobile={16} className='border-right'>
          <Image src={MTpsImage} className='icon-tiny' />

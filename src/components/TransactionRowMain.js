@@ -46,30 +46,27 @@ export const TransactionRowType = ({ toggleShowSub, i, transaction, showSub, ico
    >
       <Grid.Column computer={11}>
          <Grid verticalAlign='middle'>
-            <Grid.Column className='col-image' style={{ width: '90px', paddingLeft: '0px', paddingRight: '0px', position: 'relative', flex: '0 0 90px' }}>
-               <Image src={iconImage} className='main-image' style={{ width: '18px', margin: '0 24px 0 18px' }} align='left' />
+            <Grid.Column className='col-image'>
+               <div className='main-image'>
+                  <Image src={iconImage} className='' align='left' />
+               </div>
                {showSub
-                  ? <Image onClick={() => transaction.body && toggleShowSub(i)} src={ArrowDown} className='dropdown-image' style={{ width: '20px', top: '4px', left: '-6px', cursor: transaction.body && 'pointer' }} />
-                  : <Image onClick={() => transaction.body && toggleShowSub(i)} src={ArrowRight} className='dropdown-image' style={{ width: '10px', margin: '0 0 0 0', cursor: transaction.body && 'pointer' }} />
+                  ? <Image onClick={() => transaction.body && toggleShowSub(i)} src={ArrowDown} className='dropdown-image dropdown-image-down' />
+                  : <Image onClick={() => transaction.body && toggleShowSub(i)} src={ArrowRight} className='dropdown-image dropdown-image-right' />
                }
-
             </Grid.Column>
-            <Grid.Column style={{ width: 'auto', paddingLeft: '0px', paddingRight: '0px', flex: '1' }}>
-               <span style={{ fontWeight: '700', color: '#000' }}>
-                  New account Created:
-                  <Link
-                     to=''
-                     className='color-black'
-                  >
-                     @erik.near aRWDSa...
-                  </Link>
-               </span>
+            <Grid.Column className='main-row-title'>
+               New account Created:
+               <Link
+                  to=''
+                  className='color-black'
+               >@erik.near aRWDSa...</Link>
                <br />
-               <span className='color-brown-grey font-small'>
+               <span className='font-small'>
                   by
                   <Link
                      to=''
-                     className='color-brown-grey font-bold'
+                     className='font-bold'
                   > @username.goes.here</Link>
                </span>
             </Grid.Column>
@@ -78,14 +75,10 @@ export const TransactionRowType = ({ toggleShowSub, i, transaction, showSub, ico
       <Grid.Column computer={5} textAlign='right'>
          <Link
             to=''
-            className='color-blue'
-            style={{ fontWeight: '700' }}>
-            69a368
-         </Link>
+            className='bs-medium'>69a368</Link>
          <br />
-         
-         <span className='color-brown-grey font-small'>
-            <span className='font-bold'>Completed </span>
+         <span className='font-small'>
+            <span className='bs-medium'>Completed </span>
             2 hrs ago
          </span>
       </Grid.Column>
@@ -120,10 +113,10 @@ class TransactionRowMain extends Component {
          <Fragment>
             <TransactionRowType iconImage={image} showSub={this.state.showSub} toggleShowSub={this.toggleShowSub} i={i} transaction={transaction} />
 
-            <Grid.Row columns={1} verticalAlign='middle' className={`border-top-light ${this.state.showSub ? '' : 'hide'}`} style={{ mipadding: '0px' }}>
+            <Grid.Row columns={1} verticalAlign='middle' className={`transaction-row-sub border-top-light ${this.state.showSub ? '' : 'hide'}`}>
                <Grid.Column>
-                  <Grid columns={1} className={`${i && 'border-top'} border-bottom`} style={{ background: '#f8f8f8', minHeight: '58px' }}>
-                     <Grid columns={2} className='border-left-bold' style={{ padding: '0px 0 0 10px', margin: '0 0 0 24px' }}>
+                  <Grid columns={1} className={`${i && 'border-top'} border-bottom transaction-row-sub-grid`} >
+                     <Grid columns={2} className='border-left-bold transaction-row-sub-grid-2'>
                         {transaction.body && transaction.body.length && transaction.body.map((t, j) => (
                            <TransactionRowMain xkey={`${this.props.xkey}${j}`} key={`${this.props.xkey}${j}`} filterTypes={filterTypes} transaction={t} i={j} toggleShowSub={toggleShowSub} />
                         ))}

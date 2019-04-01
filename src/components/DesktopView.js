@@ -22,6 +22,9 @@ import TransactionsImage from '../images/icon-transactions.svg'
 import HelpImage from '../images/icon-help.svg'
 import IssuesImage from '../images/icon-issues.svg'
 import AccountImage from '../images/icon-account.svg'
+import ShardImage from '../images/icon-shard.svg'
+import ContractsImage from '../images/icon-contract.svg'
+
 
 
 const getWidth = () => {
@@ -62,7 +65,7 @@ class DesktopView extends Component {
                onBottomPassed={this.showFixedMenu}
                onBottomPassedReverse={this.hideFixedMenu}
             >
-               <Segment style={{ height: '72px' }} basic></Segment>
+               <Segment className='Navbar-d' basic></Segment>
                <Menu
                   className='Navbar'
                   // fixed={fixed ? 'top' : null}
@@ -93,6 +96,26 @@ class DesktopView extends Component {
                      activeClassName='hover'
                      onClick={this.handleItemClick}
                      as={NavLink}
+                     to='/contracts'
+                  >
+                     <Image className="Navbar-icon" src={ContractsImage} />
+                     CONTRACTS
+                  </Menu.Item>
+                  <Menu.Item
+                     name='beaconChain'
+                     activeClassName='hover'
+                     onClick={this.handleItemClick}
+                     as={NavLink}
+                     to='/transactions'
+                  >
+                     <Image className="Navbar-icon" src={TransactionsImage} />
+                     TRANSACTIONS
+                  </Menu.Item>
+                  <Menu.Item
+                     name='beaconChain'
+                     activeClassName='hover'
+                     onClick={this.handleItemClick}
+                     as={NavLink}
                      to='/beacon-chain'
                   >
                      <Image className="Navbar-icon" src={BlocksImage} />
@@ -105,18 +128,8 @@ class DesktopView extends Component {
                      as={NavLink}
                      to='/shard-chain'
                   >
-                     <Image className="Navbar-icon" src={TransactionsImage} />
+                     <Image className="Navbar-icon" src={ShardImage} />
                      SHARD
-                  </Menu.Item>
-                  <Menu.Item
-                     name='beaconChain'
-                     activeClassName='hover'
-                     onClick={this.handleItemClick}
-                     as={NavLink}
-                     to='/transactions'
-                  >
-                     <Image className="Navbar-icon" src={TransactionsImage} />
-                     TRANSACTIONS
                   </Menu.Item>
                   {/* <Menu.Item
                      name='beaconChain'
@@ -128,16 +141,6 @@ class DesktopView extends Component {
                      <Image className="Navbar-icon" src={AccountImage} />
                      ACCOUNTS
                   </Menu.Item> */}
-                  <Menu.Item
-                     name='beaconChain'
-                     activeClassName='hover'
-                     onClick={this.handleItemClick}
-                     as={NavLink}
-                     to='/contracts'
-                  >
-                     <Image className="Navbar-icon" src={AccountImage} />
-                     CONTRACTS
-                  </Menu.Item>
                   <Menu.Menu position='right'>
                      <Menu.Item
                         as='a'

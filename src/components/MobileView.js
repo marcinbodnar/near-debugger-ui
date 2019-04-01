@@ -24,6 +24,8 @@ import IssuesImage from '../images/icon-issues.svg'
 import AccountImage from '../images/icon-account.svg'
 import ContactsImage from '../images/icon-contacts.svg'
 import SidebarImage from '../images/sidebar.png'
+import ShardImage from '../images/icon-shard.svg'
+import ContractsImage from '../images/icon-contract.svg'
 
 
 const getWidth = () => {
@@ -64,9 +66,9 @@ class MobileView extends Component {
                vertical
                visible={sidebarOpened}
                direction='right'
-               style={{ background: '#111314' }}
+               className='sidebar-mobile'
             >
-               <Header style={{ height: '72px', padding: '0px 0 0 20px', margin: '0px', lineHeight: '72px', color: '#fff', fontSize: '14px' }}>
+               <Header className='sidebar-mobile-header'>
                   @?
                </Header>
                <Menu.Item
@@ -90,7 +92,7 @@ class MobileView extends Component {
                   to='/shard-chain'
                   onClick={this.handleSidebarHide}
                >
-                  <Image className="Navbar-icon" src={TransactionsImage} />
+                  <Image className="Navbar-icon" src={ShardImage} />
                   SHARD
                </Menu.Item>
                <Menu.Item
@@ -106,7 +108,7 @@ class MobileView extends Component {
                   to='/contracts'
                   onClick={this.handleSidebarHide}
                >
-                  <Image className="Navbar-icon" src={TransactionsImage} />
+                  <Image className="Navbar-icon" src={ContractsImage} />
                   CONTRACTS
                </Menu.Item>
                <Menu.Item
@@ -125,16 +127,16 @@ class MobileView extends Component {
                   <Image className="Navbar-icon" src={IssuesImage} />
                   ISSUES
                </Menu.Item>
-               <Menu.Item>
-                  <Header style={{ fontSize: '12px', color: '#999', margin: '0' }}>
+               <Menu.Item className='sidebar-mobile-submenu'>
+                  <Header>
                      MANAGE ACCOUNT
                   </Header>
                   <Menu.Menu className='Sidebar-submenu'>
-                     <Menu.Item as='a' style={{ color: '#6ad1e3', paddingLeft: '20px', fontSize: '14px' }}>
+                     <Menu.Item as='a'>
                         <Image className="Navbar-icon" src={AccountImage} />
                         Profile
                      </Menu.Item>
-                     <Menu.Item as='a' style={{ color: '#6ad1e3', paddingLeft: '20px', fontSize: '14px' }}>
+                     <Menu.Item as='a'>
                         <Image className="Navbar-icon" src={ContactsImage} />
                         Contacts
                      </Menu.Item>
@@ -146,7 +148,6 @@ class MobileView extends Component {
                <Segment
                   inverted
                   textAlign='center'
-                  style={{ minHeight: 72, padding: '1em 0em' }}
                   vertical
                >
                   <Menu
@@ -160,7 +161,7 @@ class MobileView extends Component {
                         <Image className='mainlogo' src={LogoImage} />
                      </Menu.Item>
                      <Menu.Menu position='right'>
-                        <Menu.Item onClick={this.handleToggle} style={{ paddingRight: '0' }}>
+                        <Menu.Item className='pusher-image' onClick={this.handleToggle} >
                            <Image className="Navbar-icon" src={SidebarImage} align='right' />
                         </Menu.Item>
                      </Menu.Menu>

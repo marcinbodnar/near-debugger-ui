@@ -26,64 +26,43 @@ class BlocksList extends Component {
 
       return (
          <Fragment>
-            <Grid>
-               <Grid.Row>
-                  <Grid.Column textAlign='left' width={recent ? 11 : 16}>
-                     <Header
-                        as={recent ? 'h2' : 'h1'}
-                     >
-                        <Image className="column-icon" src={BlocksImage} />
-                        {recent && 'Recent '}
-                        Blocks
-                        {!recent && ` - ${blockType}`}
-                     </Header>
-                  </Grid.Column>
-                  {recent && (
-                     <Grid.Column textAlign='right' width={5} verticalAlign='middle'>
-                        <Button
-                           as={Link}
-                           to='/beacon-chain'
-                           className='view-all'>
-                           VIEW ALL
-                        </Button>
-                     </Grid.Column>
-                  )}
-               </Grid.Row>
-            </Grid>
-            <Grid className='recent-x' style={{minHeight: '500px'}}>
-               <Dimmer inverted active={loader}>
-                  <Loader  />
-               </Dimmer>
+            <Dimmer inverted active={loader}>
+               <Loader  />
+            </Dimmer>
+            
+            {blocks.map((block, i) => (
+               <Grid.Row
+                  verticalAlign='middle'
+                  className='border-bottom-light main-row'
+               >
+                  <Grid.Column computer={11}>
+                     <Grid verticalAlign='middle'>
+                        <Grid.Column>
+                           <Link to={`/${blockType}-block/${block.index}`} className='color-black font-bold'>{block.index}</Link>
+                           <br />
+                           <span className='color-brown-grey font-small'>
+                              <Image className="column-icon-s" src={MTransactionsImage} />
+                              {block.num_transactions != null ? block.num_transactions : '?'} Transactions
 
-               {blocks.map((block, i) => (
-                  <Grid.Row key={`block-${i}`} >
-                     <Grid.Column textAlign='left' className='color-brown-grey' floated='left' width={10} style={{ wordWrap: 'break-word' }}>
-                        <Link to={`/${blockType}-block/${block.index}`}>
-                           {block.index}
-                        </Link>
-                        <br />
-                        <span>
-                           <Image className="column-icon-s" src={MTransactionsImage} />
-                           {block.num_transactions != null ? block.num_transactions : '?'} Transactions
-                        </span>
-
-                        {blockType === 'shard' && (
-                           <span style={{ paddingLeft: '10px' }}>
-                              <Image className="column-icon-s" src={MReceiptsImage} />
-                              {block.num_receipts != null ? block.num_receipts : '?'} Receipts
+                              {blockType === 'shard' && (
+                                 <span>
+                                    <Image className="column-icon-s" src={MReceiptsImage} />
+                                    {block.num_receipts != null ? block.num_receipts : '?'} Receipts
+                                 </span>
+                              )}
                            </span>
-                        )}
-                     </Grid.Column>
-                     <Grid.Column textAlign='right' className='color-brown-grey' floated='right' width={6}>
-                        by <a href='/'>?</a>
-                        <br />
-                        <span style={{ color: '#bbb', fontSize: '12px' }}>
-                           ? sec ago
-                        </span>
-                     </Grid.Column>
-                  </Grid.Row>
-               ))}
-            </Grid>
+                        </Grid.Column>
+                     </Grid>
+                  </Grid.Column>
+                  <Grid.Column computer={5} textAlign='right'>
+                     by <a href='/'>?</a>
+                     <br />
+                     <span className='font-small'>
+                        ? sec ago
+                     </span>
+                  </Grid.Column>
+               </Grid.Row>
+            ))}
          </Fragment>
       )
    }

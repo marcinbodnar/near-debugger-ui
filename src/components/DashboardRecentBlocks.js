@@ -53,7 +53,7 @@ const DashboardRecentBlocks = ({ children }) => (
       <Grid.Row className='border-left-bold dashboard-recent-blocks'>
          {children}
       </Grid.Row>
-      <Grid.Row style={{ padding: '0 0 0 0' }}>
+      <Grid.Row>
          <Grid.Column className='main-row-last' textAlign='left' width={16}>
             <Button
                as={Link}

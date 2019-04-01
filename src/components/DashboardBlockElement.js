@@ -41,30 +41,30 @@ import BlocksList from './BlocksList'
 import TransactionRowMain from './TransactionRowMain'
 
 const DashboardBlockElement = ({ block }) => (
-   <Grid.Column textAlign='left' width={8} style={{ margin: '0px', padding: '0px 0 0 10px' }}>
+   <Grid.Column className='block-element' width={8}>
       <Grid as={Link} to={`/beacon-block/${block.index}`} columns={1} stackable className='block-b'>
          <Grid.Row>
             <Grid.Column className='h3'>
                #{block.index}
             </Grid.Column>
-            <Grid.Column className='color-brown-grey' style={{ paddingTop: '8px' }}>
-               <Image src={MHeightImage} className='icon-tiny' style={{ margin: '2px 6px 0 0' }} />
+            <Grid.Column className='color-brown-grey block-element-details'>
+               <Image src={MHeightImage} />
                254
             </Grid.Column>
             <Grid.Column className='color-brown-grey'>
-               <Image src={MTransactionsImage} className='icon-tiny' style={{ margin: '2px 6px 0 0' }} />
+               <Image src={MTransactionsImage} />
                15489
             </Grid.Column>
             <Grid.Column className='color-brown-grey'>
-               <Image src={MUserImage} className='icon-tiny' style={{ margin: '2px 6px 0 0' }} />
+               <Image src={MUserImage} />
                @vlad.near
             </Grid.Column>
-            <Grid.Column computer={9} tablet={16} style={{ paddingTop: '10px', paddingRight: '0px' }}>
-               <span className='color-blue' style={{ fontWeight: '700' }}>
-                  69a3a68...
-               </span>
+         </Grid.Row>
+         <Grid.Row>
+            <Grid.Column computer={9} tablet={16} className='bs-medium'>
+               69a3a68...
             </Grid.Column>
-            <Grid.Column className='color-brown-grey' textAlign='right' computer={7} tablet={16} style={{ paddingTop: '10px', fontSize: '12px' }}>
+            <Grid.Column className='font-small' textAlign='right' computer={7} tablet={16}>
                1h ago
             </Grid.Column>
          </Grid.Row>

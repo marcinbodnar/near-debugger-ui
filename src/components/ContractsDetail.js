@@ -75,7 +75,7 @@ class ContractsDetail extends Component {
          { img: TransactionTypeKeySwap, name: 'SWAP KEY' },
          { img: TransactionTypeKeyNew, name: 'ADD KEY' },
          { img: TransactionTypeKeyDelete, name: 'DELETE KEY' },
-         { img: TransactionTypeAcct, name: 'ADD BLS KEY' },
+         // { img: TransactionTypeAcct, name: 'ADD BLS KEY' },
          { img: MTransactionsImage, name: 'UNKNOWN CALL' },
       ],
    }
@@ -138,19 +138,10 @@ class ContractsDetail extends Component {
 
       return (
          <Container>
-            <Grid columns={2} className='no-padding-y'>
-               <Grid.Column style={{paddingBottom: '0px'}}>
-                  <h1 className="color-charcoal-grey">Contracts</h1>   
-               </Grid.Column>
-               <Grid.Column style={{paddingBottom: '0px'}} textAlign='right'>
-                  <h1 className="color-black">
-                     2,113,478
-                     <span className="color-brown-grey"> total</span>
-                  </h1>
-               </Grid.Column>
+            <Grid columns={2} className='page-title'>
+               <Grid.Column as='h1'>Contracts</Grid.Column>
+               <Grid.Column as='h1' textAlign='right' className='color-black'>2,113,478<span className="color-brown-grey"> total</span></Grid.Column>
             </Grid>
-                  
-            
             
             <PaginationBlock 
                filterTypes={filterTypes}

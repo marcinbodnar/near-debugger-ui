@@ -10,6 +10,7 @@ import '../index.css'
 import {
    Container,
    Loader,
+   Grid,
 } from 'semantic-ui-react'
 
 import TransactionsImage from '../images/icon-transactions.svg'
@@ -72,7 +73,7 @@ class TransactionsDetail extends Component {
          { img: TransactionTypeKeySwap, name: 'SWAP KEY' },
          { img: TransactionTypeKeyNew, name: 'ADD KEY' },
          { img: TransactionTypeKeyDelete, name: 'DELETE KEY' },
-         { img: TransactionTypeAcct, name: 'ADD BLS KEY' },
+         // { img: TransactionTypeAcct, name: 'ADD BLS KEY' },
          { img: MTransactionsImage, name: 'UNKNOWN CALL' },
       ],
    }
@@ -133,7 +134,10 @@ class TransactionsDetail extends Component {
 
       return (
          <Container>
-            <h1 className="color-charcoal-grey">Transactions</h1>
+            <Grid className='page-title'>
+               <Grid.Column as='h1'>Transactions</Grid.Column>
+            </Grid>
+            
             <PaginationBlock
                filterTypes={filterTypes}
             >

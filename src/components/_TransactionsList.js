@@ -64,7 +64,7 @@ class TransactionsList extends Component {
                            #{transaction.hash}
                         </Link>
                         <br />
-                        <span style={{ fontWeight: '700' }}>{transaction.type} </span>
+                        <span style={{ fontWeight: '600' }}>{transaction.type} </span>
                         <span className="color-brown-grey">by {transaction.body.originator}</span>
                      </Grid.Column>
                      <Grid.Column textAlign='right' floated='right' width={6} style={{ color: '#999', wordWrap: 'break-word' }}>

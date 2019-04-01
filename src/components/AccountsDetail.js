@@ -27,8 +27,6 @@ import TransactionTypeKeyNew from '../images/icon-t-key-new.svg'
 import TransactionTypeKeyDelete from '../images/icon-t-key-delete.svg'
 import MTransactionsImage from '../images/icon-m-transaction.svg'
 
-import BlockDetail from './BlockDetail'
-// import TransactionsListNew from './TransactionsListNew'
 import PaginationBlock from './PaginationBlock'
 import TransactionRowMain from './TransactionRowMain'
 
@@ -73,7 +71,7 @@ class AccountsDetail extends Component {
          { img: TransactionTypeKeySwap, name: 'SWAP KEY' },
          { img: TransactionTypeKeyNew, name: 'ADD KEY' },
          { img: TransactionTypeKeyDelete, name: 'DELETE KEY' },
-         { img: TransactionTypeAcct, name: 'ADD BLS KEY' },
+         // { img: TransactionTypeAcct, name: 'ADD BLS KEY' },
          { img: MTransactionsImage, name: 'UNKNOWN CALL' },
       ],
    }
@@ -136,18 +134,10 @@ class AccountsDetail extends Component {
 
       return (
          <Container>
-            <Grid columns={2} className='no-padding-y'>
-               <Grid.Column style={{paddingBottom: '0px'}}>
-                  <h1 className="color-charcoal-grey">Accounts</h1>   
-               </Grid.Column>
-               <Grid.Column style={{paddingBottom: '0px'}} textAlign='right'>
-                  <h1 className="color-black">
-                     2,113,478
-                     <span className="color-brown-grey"> total</span>
-                  </h1>
-               </Grid.Column>
+            <Grid columns={2} className='page-title'>
+               <Grid.Column as='h1'>Accounts</Grid.Column>
+               <Grid.Column as='h1' textAlign='right' className='color-black'>2,113,478<span className="color-brown-grey"> total</span></Grid.Column>
             </Grid>
-            
             
             <PaginationBlock 
                filterTypes={filterTypes}

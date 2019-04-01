@@ -40,7 +40,7 @@ import {
 } from 'semantic-ui-react'
 
 import BlockDetail from './BlockDetail'
-import TransactionsList from './TransactionsList'
+// import TransactionsList from './TransactionsList'
 
 import PaginationBlock from './PaginationBlock'
 import TransactionRowMain from './TransactionRowMain'
@@ -67,7 +67,7 @@ class ShardBlockDetail extends Component {
          { img: TransactionTypeKeySwap, name: 'SWAP KEY' },
          { img: TransactionTypeKeyNew, name: 'ADD KEY' },
          { img: TransactionTypeKeyDelete, name: 'DELETE KEY' },
-         { img: TransactionTypeAcct, name: 'ADD BLS KEY' },
+         // { img: TransactionTypeAcct, name: 'ADD BLS KEY' },
          { img: MTransactionsImage, name: 'UNKNOWN CALL' },
       ],
    }
@@ -115,13 +115,11 @@ class ShardBlockDetail extends Component {
 
       return (
          <Container>
-            <h1><span className="color-charcoal-grey">Shard Block</span> #{index}</h1>
+            <Grid className='page-title'>
+               <Grid.Column as='h1'>Shard Block: <span className="color-black"> #{index}</span></Grid.Column>
+            </Grid>
 
-            
-
-
-
-            <Grid className='box block'>
+            <Grid className='box'>
                <Dimmer inverted active={loader}>
                   <Loader />
                </Dimmer>
@@ -130,87 +128,70 @@ class ShardBlockDetail extends Component {
                      <Grid.Column computer={3} tablet={8} mobile={16} className='border-right'>
                         <Image src={MHeightImage} align='left' className='icon-tiny' />
                         <h5>HEIGHT</h5>
-                        <h2>
-                           234,567
-                        </h2>
+                        <h2>{index}</h2>
                      </Grid.Column>
                      <Grid.Column computer={4} tablet={8} mobile={16} className='border-right'>
                         <Image src={MTransactionsImage} align='left' className='icon-tiny' />
                         <h5>TRANSACTIONS</h5>
-                        <h2>
-                           {NumTransactionsIndex}
-                        </h2>
+                        <h2>{NumTransactionsIndex}</h2>
                      </Grid.Column>
                      <Grid.Column computer={4} tablet={8} mobile={16} className='border-right'>
                         <Image src={MSizeImage} align='left' className='icon-tiny' />
                         <h5>SIZE</h5>
-                        <h2>
-                           26,544 Bytes
-                        </h2>
+                        <h2>26,544 Bytes</h2>
                      </Grid.Column>
                      <Grid.Column computer={5} tablet={8} mobile={16}>
                         <Image src={MUserImage} align='left' className='icon-tiny' />
                         <h5>WITNESS</h5>
-                        <h3 className='color-blue'>
-                           @vlad.near
-                        </h3>
+                        <h3 className='color-blue'>@vlad.near</h3>
                      </Grid.Column>
                   </Grid.Row>
                   <Grid.Row className=''>
                      <Grid.Column computer={6} tablet={8}>
                         <h5>CREATED</h5>
-                        <h3>
-                           March 20, 2019 at 5:34:09pm
-                        </h3>
+                        <h3>March 20, 2019 at 5:34:09pm</h3>
                      </Grid.Column>
                      <Grid.Column computer={10} tablet={8}>
                         <h5>ADDRESS</h5>
-                        <div style={{ display: 'flex' }}>
-                           <div>
-                              <h3>{hash}</h3>
-                           </div>
-                           <div>
-                              <Image src={MCopyImage} align='' style={{ width: '18px', margin: '2px 10px 0 10px' }} />
-                           </div>
-                        </div>
+                        <List floated='left' horizontal>
+                           <List.Item as='h3'>{hash}</List.Item>
+                           <List.Item ><Image src={MCopyImage} className='copy-image' /></List.Item>
+                        </List>
                      </Grid.Column>
                   </Grid.Row>
                   <Grid.Row className='background-lg'>
                      <Grid.Column computer={16} tablet={16}>
                         <h5>PARENT HASH</h5>
-                        <div style={{ display: 'flex' }}>
-                           <div>
-                              <Link
-                                 to={`/shard-block/${index - 1}`}
-                                 className='h3 color-seafoam-blue'
-                              >
-                                 {parentHash}
-                              </Link>
-                           </div>
-                           <div>
-                              <Image src={MCopyImage} align='' style={{ width: '18px', margin: '2px 10px 0 10px' }} />
-                           </div>
-                        </div>
+                        <List floated='left' horizontal>
+                           <List.Item 
+                              as={Link}
+                              to={`/shard-block/${index - 1}`}
+                              className='h3 color-seafoam-blue'
+                           >{parentHash}</List.Item>
+                           <List.Item ><Image src={MCopyImage} className='copy-image' /></List.Item>
+                        </List>
                      </Grid.Column>
                   </Grid.Row>
                </Fragment>
             </Grid>
 
-
-            <PaginationBlock
-               filterTypes={filterTypes}
-            >
-               {NumTransactionsIndex !== 0 && transactions.map((transaction, i) => (
-                  <TransactionRowMain
-                     xkey={i}
-                     key={i}
-                     transaction={transaction}
-                     i={i}
-                     filterTypes={filterTypes}
-                     type=''
-                  />
-               ))}
-            </PaginationBlock>
+            {NumTransactionsIndex !== 0 && (
+               <PaginationBlock
+                  filterTypes={filterTypes}
+               >
+                  {transactions.map((transaction, i) => (
+                     <TransactionRowMain
+                        xkey={i}
+                        key={i}
+                        transaction={transaction}
+                        i={i}
+                        filterTypes={filterTypes}
+                        type=''
+                     />
+                  ))}
+               </PaginationBlock>
+            )}
+            
 
 
 

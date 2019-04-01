@@ -34,11 +34,11 @@ import TransactionTypeKeyDelete from '../images/icon-t-key-delete.svg'
 import MTransactionsImage from '../images/icon-m-transaction.svg'
 import MHeldImage from '../images/icon-m-held.svg'
 import MCopyImage from '../images/icon-m-copy.svg'
+import MPowerImage from '../images/icon-m-power.svg'
 
+import TransarrowDownImage from '../images/icon-transarrow-down.svg'
+import TransarrowUpImage from '../images/icon-transarrow-up.svg'
 
-
-import BlockDetail from './BlockDetail'
-// import TransactionsListNew from './TransactionsListNew'
 import PaginationBlock from './PaginationBlock'
 import TransactionRowMain from './TransactionRowMain'
 
@@ -73,92 +73,72 @@ class AccountDetail extends Component {
          { img: TransactionTypeKeySwap, name: 'SWAP KEY' },
          { img: TransactionTypeKeyNew, name: 'ADD KEY' },
          { img: TransactionTypeKeyDelete, name: 'DELETE KEY' },
-         { img: TransactionTypeAcct, name: 'ADD BLS KEY' },
+         // { img: TransactionTypeAcct, name: 'ADD BLS KEY' },
          { img: MTransactionsImage, name: 'UNKNOWN CALL' },
       ],
    }
 
 
    render() {
-
       const { loader, filterTypes, transactionsX } = this.state
 
 
       return (
          <Container>
-            <h1><span className="color-charcoal-grey">Account:</span> @alice.near</h1>
+            <Grid className='page-title'>
+               <Grid.Column as='h1'>Account: <span className="color-black"> @alice.near</span></Grid.Column>
+            </Grid>
+
             <Grid className='box block'>
                <Dimmer inverted active={loader}>
                   <Loader />
                </Dimmer>
+
                <Fragment>
                   <Grid.Row width={4} className='border-bottom'>
                      <Grid.Column computer={6} tablet={8} mobile={16} className='border-right'>
-                        <Image src={TransactionTypeCall} align='left' className='icon-tiny' />
-                        <h5>BALANCE</h5>
+                        <h5><span className='balance-image'>Ⓝ </span>BALANCE</h5>
                         <List floated='left' horizontal>
-                           <List.Item as='h2'>
-                              234,567
-                           </List.Item>
-                           <List.Item>
-                              <Image src={TransactionTypeCall} align='' style={{  }} />
-                           </List.Item>
-                           <List.Item as='h5'>
-                              (2,000,000 USD)
-                           </List.Item>
+                           <List.Item as='h2'>234,567<span className='balance-image-big'> Ⓝ</span></List.Item>
+                           <List.Item as='h5'>(2,000,000 USD)</List.Item>
                         </List>
                      </Grid.Column>
                      <Grid.Column computer={3} tablet={8} mobile={16} className='border-right'>
                         <Image src={MTransactionsImage} align='left' className='icon-tiny' />
                         <h5>TRANSACTIONS</h5>
-                        <List floated='left' horizontal>
-                           <List.Item as='h2'>
-                           254
-                           </List.Item>
-                           <List.Item>
-                              <Image src={ArrowDown} align='' style={{  }} />
-                           </List.Item>
-                           <List.Item as='h2' style={{marginLeft: '10px'}}>
-                           24
-                           </List.Item>
+                        <List floated='left' horizontal className='transactions-block'>
+                           <List.Item><Image src={TransarrowDownImage} className='transarrow' /></List.Item>
+                           <List.Item as='h2'>254</List.Item>
+                           <List.Item><Image src={TransarrowUpImage} className='transarrow' /></List.Item>
+                           <List.Item as='h2'>24</List.Item>
                         </List>
                      </Grid.Column>
                      <Grid.Column computer={3} tablet={8} mobile={16} className='border-right'>
-                        <Image src={TransactionFilter} align='left' className='icon-tiny' />
+                        <Image src={MPowerImage} align='left' className='icon-tiny' />
                         <h5>POWER</h5>
                         <List floated='left' horizontal>
-                           <List.Item as='h2'>
-                           50,000
-                           </List.Item>
+                           <List.Item as='h2'>50,000</List.Item>
                         </List>
                      </Grid.Column>
                      <Grid.Column computer={4} tablet={8} mobile={16}>
                         <Image src={MHeldImage} align='left' className='icon-tiny' />
                         <h5>NEAR HELD</h5>
                         <List floated='left' horizontal>
-                           <List.Item as='h2'>
-                           50,000
-                           </List.Item>
+                           <List.Item as='h2'>50,000</List.Item>
                         </List>
                      </Grid.Column>
                   </Grid.Row>
                   <Grid.Row className='background-lg'>
                      <Grid.Column computer={6} tablet={8}>
                         <h5>CREATED</h5>
-                        <h3>
-                           March 20, 2019 at 5:34:09pm
-                           </h3>
+                        <h3>March 20, 2019 at 5:34:09pm</h3>
                      </Grid.Column>
                      <Grid.Column computer={10} tablet={8}>
                         <h5>ADDRESS</h5>
-                        <div style={{ display: 'flex' }}>
-                           <div>
-                              <h3>TMuA6YqfCeX8EhbfYEg5y7S4DqzSJireY9</h3>
-                           </div>
-                           <div>
-                              <Image src={MCopyImage} align='' style={{ width: '18px', margin: '2px 10px 0 10px' }} />
-                           </div>
-                        </div>
+                        <List floated='left' horizontal>
+                           <List.Item as='h3'>TMuA6YqfCeX8EhbfYEg5y7S4DqzSJireY9</List.Item>
+                           <List.Item ><Image src={MCopyImage} className='copy-image' /></List.Item>
+                        </List>
                      </Grid.Column>
                   </Grid.Row>
                </Fragment>
@@ -177,9 +157,6 @@ class AccountDetail extends Component {
                   />
                ))}
             </PaginationBlock>
-
-
-
          </Container>
       )
    }

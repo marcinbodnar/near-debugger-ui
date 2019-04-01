@@ -71,9 +71,7 @@ class BlockDetail extends Component {
                            <Link
                               to={`/${blockType}-block/${index - 1}`}
                               className='h3 color-seafoam-blue'
-                           >
-                              {parentHash}
-                           </Link>
+                           >{parentHash}</Link>
                         </Segment>
                      </Grid.Column>
                   </Grid.Row>
@@ -85,9 +83,7 @@ class BlockDetail extends Component {
                               <Link
                                  to={`/shard-block/${shardBlockIndex}`}
                                  className='h3 color-seafoam-blue'
-                              >
-                                 {shardBlockHash}
-                              </Link>
+                              >{shardBlockHash}</Link>
                            </Segment>
                         </Grid.Column>
                      </Grid.Row>

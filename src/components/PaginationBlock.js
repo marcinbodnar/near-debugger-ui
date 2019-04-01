@@ -40,11 +40,14 @@ import { PaginationTab } from './PaginationTab'
 
 
 class PaginationBlock extends Component {
+   static defaultProps = {
+      onPageChanged: () => { },
+   }
 
    state = {
       search: '',
       dropdown: false,
-      dropdownType: TransactionFilter,
+      dropdownType: this.props.type ? this.props.filterTypes[this.props.type].img : TransactionFilter,
       pagingDropdown: false,
       pagingValue: 10,
       pagingTypes: [10, 20, 50, 100],
@@ -72,6 +75,8 @@ class PaginationBlock extends Component {
          pagingValue,
          pagingDropdown: !this.state.pagingDropdown
       })
+
+      this.props.onPageChanged(1, pagingValue)
    }
 
    handleTabChange(pageNumber) {
@@ -91,30 +96,37 @@ class PaginationBlock extends Component {
 
    render() {
 
-      const { filterTypes, type } = this.props
+      const { filterTypes, type, pageNumber = 0 } = this.props
       const { buttonRadio } = this.state
 
+      const {
+         totalRecords = 1100,
+         pageLimit = 10,
+         initialPage = 0,
+         onPageChanged = () => { },
+         pageNeighbors = 1
+      } = this.props
+
       const filterTypesByType = type
-         ? [filterTypes[0], filterTypes[type]]
+         ? [filterTypes[type]]
          : filterTypes
 
 
       return (
-         <Grid className='border-top-bold border-bottom-bold' stackable columns={2}>
+         <Grid className='border-top-bold border-bottom-bold pagination-block' stackable columns={2}>
             <Grid.Row className='border-bottom-light'>
                <Grid.Column width={10} verticalAlign='middle'>
 
-                  <Grid className='' verticalAlign='middle' style={{ minHeight: '70px' }}>
+                  <Grid className='pagination-block-top' verticalAlign='middle'>
                      {type === 5
                         ? (
                            <Fragment>
-                              <Grid.Column style={{ width: '90px', paddingLeft: '0px', paddingRight: '0px', position: 'relative' }}>
-                                 <h6>SHOWING</h6>
+                              <Grid.Column as='h6' className='pagination-block-showing color-charcoal-grey'>
+                                 SHOWING
                               </Grid.Column>
-                              <Grid.Column only='tablet computer' style={{ width: '150px', paddingLeft: '0px', paddingRight: '0px', borderRight: '1px solid #e6e6e6' }}>
+                              <Grid.Column only='tablet computer' className='pagination-block-switcher'>
                                  <div
                                     className='button-radio'
-                                    style={{}}
                                     onClick={this.buttonRadioClick}
                                  >
                                     <div className={`left ${!buttonRadio ? 'on' : 'off'}`}>
@@ -128,46 +140,41 @@ class PaginationBlock extends Component {
                            </Fragment>
                         ) : (
                            <Fragment>
-                              <Grid.Column style={{ width: '90px', paddingLeft: '0px', paddingRight: '0px', position: 'relative' }}>
+                              {filterTypes && (
+                                 <Fragment>
+                                    <Grid.Column className='pagination-block-filter'>
+                                       <Button
+                                          onClick={() => this.setState({ dropdown: !this.state.dropdown })}
+                                          // onBlur={() => this.setState({ dropdown: !this.state.dropdown })}
+                                          className='filter-dropdown-tr'
+                                          style={{ backgroundImage: `url(${this.state.dropdownType}), url(${ArrowDown})` }}
+                                       ></Button>
 
-                                 <Button
-                                    onClick={() => this.setState({ dropdown: !this.state.dropdown })}
-                                    // onBlur={() => this.setState({ dropdown: !this.state.dropdown })}
-                                    className='filter-dropdown-tr'
-                                    style={{ backgroundImage: `url(${this.state.dropdownType}), url(${ArrowDown})` }}
-                                 // style={{height: '100px'}}
-
-                                 ></Button>
-
-
-                                 <List selection verticalAlign='middle' className={`filter-dropdown ${this.state.dropdown ? '' : 'hide'}`}>
-                                    {filterTypesByType.map((type, i) => (
-                                       <List.Item
-                                          key={`filter-${i}`}
-                                          style={{ height: '40px' }}
-                                          onClick={() => this.handleDropdownClick(type.img)}
-                                       >
-                                          <Image src={type.img} style={{ width: '18px', margin: '0 10px' }} />
-                                          <List.Content as='h6'>
-                                             {type.name}
-                                          </List.Content>
-                                       </List.Item>
-                                    ))}
-                                 </List>
-
-                              </Grid.Column>
-                              <Grid.Column only='tablet computer' style={{ width: '150px', paddingLeft: '0px', paddingRight: '0px', borderRight: '1px solid #e6e6e6' }}>
-                                 <h6>FILTER BY TYPE</h6>
-                              </Grid.Column>
+                                       <List selection verticalAlign='middle' className={`filter-dropdown ${this.state.dropdown ? '' : 'hide'}`}>
+                                          {filterTypesByType.map((type, i) => (
+                                             <List.Item
+                                                key={`filter-${i}`}
+                                                onClick={() => this.handleDropdownClick(type.img)}
+                                             >
+                                                <Image src={type.img} />
+                                                <List.Content as='h6'>{type.name}</List.Content>
+                                             </List.Item>
+                                          ))}
+                                       </List>
+                                    </Grid.Column>
+                                    <Grid.Column as='h6' className='pagination-block-filter-by' only='tablet computer'>
+                                       FILTER BY TYPE
+                                    </Grid.Column>
+                                    <Grid.Column as='h6' className='pagination-block-paging-summary'>
+                                       <span className='color-charcoal-grey h6'>1-10</span> OF 254 TOTAL
+                                    </Grid.Column>
+                                 </Fragment>
+                              )}
                            </Fragment>
                         )}
-
-                     <Grid.Column style={{ width: 'auto', paddingLeft: '20px', paddingRight: '0px' }}>
-                        <h6><span className='color-charcoal-grey h6'>1-10</span> OF 254 TOTAL</h6>
-                     </Grid.Column>
                   </Grid>
                </Grid.Column>
-               <Grid.Column width={6} textAlign='right' style={{ padding: '0px' }}>
+               <Grid.Column width={6} textAlign='right' className='pagination-block-search'>
                   <Form onSubmit={this.handleSubmit} className='search-form'>
                      <Form.Input className='search' name='search' value={this.state.search} onChange={this.handleChange} placeholder='Search transactions and receipts...' />
                   </Form>
@@ -177,9 +184,9 @@ class PaginationBlock extends Component {
             {this.props.children}
 
             <Grid.Row className='border-top-light'>
-               <Grid.Column width={10} verticalAlign='middle'>
-                  <Grid className='' verticalAlign='middle' style={{ minHeight: '70px' }}>
-                     <Grid.Column style={{ width: '90px', paddingLeft: '0px', paddingRight: '0px', position: 'relative' }}>
+               <Grid.Column width={8} verticalAlign='middle'>
+                  <Grid className='pagination-block-top' verticalAlign='middle'>
+                     <Grid.Column className='pagination-block-paging'>
                         <Button
                            onClick={() => this.setState({ pagingDropdown: !this.state.pagingDropdown })}
                            // onBlur={() => this.setState({ dropdown: !this.state.dropdown })}
@@ -189,37 +196,34 @@ class PaginationBlock extends Component {
                            {this.state.pagingValue}
                         </Button>
 
-
                         <List selection verticalAlign='middle' className={`paging-dropdown ${this.state.pagingDropdown ? '' : 'hide'}`}>
                            {this.state.pagingTypes.map((type, i) => (
                               <List.Item
                                  key={`page-${i}`}
-                                 style={{ height: '34px' }}
                                  onClick={() => this.handlePagingDropdownClick(type)}
                               >
-                                 <List.Content verticalAlign='middle' style={{ fontSize: '14px', lineHeight: '22px', fontWeight: '700', paddingLeft: '6px' }}>
-                                    {type}
-                                 </List.Content>
+                                 <List.Content verticalAlign='middle'>{type}</List.Content>
                               </List.Item>
                            ))}
                         </List>
 
                      </Grid.Column>
-                     <Grid.Column only='tablet computer' style={{ width: '150px', paddingLeft: '0px', paddingRight: '0px', borderRight: '1px solid #e6e6e6' }}>
-                        <h6>PER PAGE</h6>
+                     <Grid.Column as='h6' className='pagination-block-per-page' only='tablet computer'>
+                        PER PAGE
                      </Grid.Column>
-                     <Grid.Column style={{ width: 'auto', paddingLeft: '20px', paddingRight: '0px' }}>
-                        <h6><span className='color-charcoal-grey h6'>1-10</span> OF 254 TOTAL</h6>
+                     <Grid.Column as='h6' className='pagination-block-paging-summary'>
+                        <span className='color-charcoal-grey h6'>{(pageNumber * pageLimit) + 1}-{(pageNumber + 1) * pageLimit} </span>
+                        OF {totalRecords} TOTAL
                      </Grid.Column>
                   </Grid>
                </Grid.Column>
-               <Grid.Column width={6} textAlign='right' style={{ padding: '0px' }}>
+               <Grid.Column width={8} className='pagination-tab' textAlign='right'>
                   <PaginationTab
-                     totalRecords={1100}
-                     pageLimit={10}
-                     initialPage={0}
-                     onPageChanged={(pageNumber) => this.handleTabChange(pageNumber - 1)}
-                     pageNeighbors={1}
+                     totalRecords={totalRecords}
+                     pageLimit={pageLimit}
+                     initialPage={initialPage}
+                     onPageChanged={onPageChanged}
+                     pageNeighbors={pageNeighbors}
                   />
                </Grid.Column>
             </Grid.Row>

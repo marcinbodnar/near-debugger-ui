@@ -54,7 +54,7 @@ const TransactionRow = ({ toggleShowSub, i, transaction, showSub }) => (
 
             </Grid.Column>
             <Grid.Column style={{ width: 'auto', paddingLeft: '0px', paddingRight: '0px', flex: '1' }}>
-               <span style={{ fontWeight: '700', color: '#000' }}>
+               <span style={{ fontWeight: '600', color: '#24272a' }}>
                   New account Created: @erik.near aRWDSa...
                </span>
                <br />
@@ -63,7 +63,7 @@ const TransactionRow = ({ toggleShowSub, i, transaction, showSub }) => (
          </Grid>
       </Grid.Column>
       <Grid.Column width={4} textAlign='right'>
-         <span class='color-blue' style={{ fontWeight: '700' }}>
+         <span class='color-blue' style={{ fontWeight: '600' }}>
             69a368
          </span>
          <br />
