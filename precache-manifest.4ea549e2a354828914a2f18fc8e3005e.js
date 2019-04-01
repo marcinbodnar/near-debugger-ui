@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "79584a54bb7bddfd7d20",
-    "url": "/near-debugger-ui/static/css/main.939866dd.chunk.css"
+    "revision": "c4046e9c4b3afa9adfab",
+    "url": "/near-debugger-ui/static/css/main.8cdc9449.chunk.css"
   },
   {
-    "revision": "79584a54bb7bddfd7d20",
-    "url": "/near-debugger-ui/static/js/main.79584a54.chunk.js"
+    "revision": "c4046e9c4b3afa9adfab",
+    "url": "/near-debugger-ui/static/js/main.c4046e9c.chunk.js"
   },
   {
-    "revision": "fe18926141548e2092d9",
-    "url": "/near-debugger-ui/static/js/1.fe189261.chunk.js"
+    "revision": "75a3e49baf5a7ebba621",
+    "url": "/near-debugger-ui/static/js/1.75a3e49b.chunk.js"
   },
   {
     "revision": "c33aa8accacea69a671d",
@@ -24,10 +24,6 @@ self.__precacheManifest = [
     "url": "/near-debugger-ui/static/media/icon-m-search.2cea301b.svg"
   },
   {
-    "revision": "6de0530b5b9708aa0ee264851a0cf1a2",
-    "url": "/near-debugger-ui/static/media/Branding with Type - Bw Seido Round Regular.6de0530b.otf"
-  },
-  {
     "revision": "971c1fec19ca99196578f34e66d5f0e9",
     "url": "/near-debugger-ui/static/media/Branding with Type - Bw Seido Round Medium.971c1fec.otf"
   },
@@ -36,8 +32,8 @@ self.__precacheManifest = [
     "url": "/near-debugger-ui/static/media/Branding with Type - Bw Seido Round Light.dde73b38.otf"
   },
   {
-    "revision": "faebc92a5a81ac8dd1f137a5102c9c4e",
-    "url": "/near-debugger-ui/static/media/icon-transactions.faebc92a.svg"
+    "revision": "6de0530b5b9708aa0ee264851a0cf1a2",
+    "url": "/near-debugger-ui/static/media/Branding with Type - Bw Seido Round Regular.6de0530b.otf"
   },
   {
     "revision": "1f33be14ce29e918cef655d2ae99a4d8",
@@ -76,6 +72,10 @@ self.__precacheManifest = [
     "url": "/near-debugger-ui/static/media/icon-t-key-delete.ef091694.svg"
   },
   {
+    "revision": "faebc92a5a81ac8dd1f137a5102c9c4e",
+    "url": "/near-debugger-ui/static/media/icon-transactions.faebc92a.svg"
+  },
+  {
     "revision": "fcefbf0bbcb0c7762b6bf8bb2dba8fc2",
     "url": "/near-debugger-ui/static/media/icon-arrow-down.fcefbf0b.svg"
   },
@@ -96,12 +96,12 @@ self.__precacheManifest = [
     "url": "/near-debugger-ui/static/media/icon-m-held.6d0d2ca9.svg"
   },
   {
-    "revision": "6f49507e5b7907cdf030d773c4be5009",
-    "url": "/near-debugger-ui/static/media/icon-m-doc.6f49507e.svg"
-  },
-  {
     "revision": "1decea7d7de62524c76ee3a6a2dea254",
     "url": "/near-debugger-ui/static/media/icon-m-size.1decea7d.svg"
+  },
+  {
+    "revision": "6f49507e5b7907cdf030d773c4be5009",
+    "url": "/near-debugger-ui/static/media/icon-m-doc.6f49507e.svg"
   },
   {
     "revision": "2c9f3083a8f3d22e981c014f117fbf1b",
@@ -184,7 +184,7 @@ self.__precacheManifest = [
     "url": "/near-debugger-ui/static/media/icon-transarrow-up.d6454108.svg"
   },
   {
-    "revision": "ff89102fe6ac55ebe00b95e8f5617004",
+    "revision": "e6fe4f051d8333f29cbe4d5885f605f2",
     "url": "/near-debugger-ui/index.html"
   }
 ];
