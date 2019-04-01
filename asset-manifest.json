@@ -1,7 +1,7 @@
 {
-  "main.css": "/near-debugger-ui/static/css/main.031a55d6.chunk.css",
-  "main.js": "/near-debugger-ui/static/js/main.f684834c.chunk.js",
-  "main.js.map": "/near-debugger-ui/static/js/main.f684834c.chunk.js.map",
+  "main.css": "/near-debugger-ui/static/css/main.d1ba0c6a.chunk.css",
+  "main.js": "/near-debugger-ui/static/js/main.2911faa2.chunk.js",
+  "main.js.map": "/near-debugger-ui/static/js/main.2911faa2.chunk.js.map",
   "static/js/1.75a3e49b.chunk.js": "/near-debugger-ui/static/js/1.75a3e49b.chunk.js",
   "static/js/1.75a3e49b.chunk.js.map": "/near-debugger-ui/static/js/1.75a3e49b.chunk.js.map",
   "runtime~main.js": "/near-debugger-ui/static/js/runtime~main.c33aa8ac.js",
@@ -45,8 +45,8 @@
   "static/media/icon-m-power.svg": "/near-debugger-ui/static/media/icon-m-power.c5489e89.svg",
   "static/media/icon-transarrow-down.svg": "/near-debugger-ui/static/media/icon-transarrow-down.e0e72e12.svg",
   "static/media/icon-transarrow-up.svg": "/near-debugger-ui/static/media/icon-transarrow-up.d6454108.svg",
-  "static/css/main.031a55d6.chunk.css.map": "/near-debugger-ui/static/css/main.031a55d6.chunk.css.map",
+  "static/css/main.d1ba0c6a.chunk.css.map": "/near-debugger-ui/static/css/main.d1ba0c6a.chunk.css.map",
   "index.html": "/near-debugger-ui/index.html",
-  "precache-manifest.4fbf63de7dd3e0fdc370c3098112e784.js": "/near-debugger-ui/precache-manifest.4fbf63de7dd3e0fdc370c3098112e784.js",
+  "precache-manifest.44957265056c8619f4fc48a74347e86b.js": "/near-debugger-ui/precache-manifest.44957265056c8619f4fc48a74347e86b.js",
   "service-worker.js": "/near-debugger-ui/service-worker.js"
 }
