@@ -1,7 +1,7 @@
 {
-  "main.css": "/near-debugger-ui/static/css/main.8cdc9449.chunk.css",
-  "main.js": "/near-debugger-ui/static/js/main.c4046e9c.chunk.js",
-  "main.js.map": "/near-debugger-ui/static/js/main.c4046e9c.chunk.js.map",
+  "main.css": "/near-debugger-ui/static/css/main.031a55d6.chunk.css",
+  "main.js": "/near-debugger-ui/static/js/main.be9c311b.chunk.js",
+  "main.js.map": "/near-debugger-ui/static/js/main.be9c311b.chunk.js.map",
   "static/js/1.75a3e49b.chunk.js": "/near-debugger-ui/static/js/1.75a3e49b.chunk.js",
   "static/js/1.75a3e49b.chunk.js.map": "/near-debugger-ui/static/js/1.75a3e49b.chunk.js.map",
   "runtime~main.js": "/near-debugger-ui/static/js/runtime~main.c33aa8ac.js",
@@ -45,8 +45,8 @@
   "static/media/icon-m-power.svg": "/near-debugger-ui/static/media/icon-m-power.c5489e89.svg",
   "static/media/icon-transarrow-down.svg": "/near-debugger-ui/static/media/icon-transarrow-down.e0e72e12.svg",
   "static/media/icon-transarrow-up.svg": "/near-debugger-ui/static/media/icon-transarrow-up.d6454108.svg",
-  "static/css/main.8cdc9449.chunk.css.map": "/near-debugger-ui/static/css/main.8cdc9449.chunk.css.map",
+  "static/css/main.031a55d6.chunk.css.map": "/near-debugger-ui/static/css/main.031a55d6.chunk.css.map",
   "index.html": "/near-debugger-ui/index.html",
-  "precache-manifest.4ea549e2a354828914a2f18fc8e3005e.js": "/near-debugger-ui/precache-manifest.4ea549e2a354828914a2f18fc8e3005e.js",
+  "precache-manifest.57bbe0916c35bebf4ea24878f829e8f3.js": "/near-debugger-ui/precache-manifest.57bbe0916c35bebf4ea24878f829e8f3.js",
   "service-worker.js": "/near-debugger-ui/service-worker.js"
 }
